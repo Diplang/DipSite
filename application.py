@@ -26,7 +26,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Use SQLite database
-db = SQL("postgres://jpzydtilypgjqa:ad520b6e9f0cdcc3fb5ad071fac219757f32e144e5f1a7d22626c3547e86552b@ec2-34-193-232-231.compute-1.amazonaws.com:5432/d9u7qnigk6llbo")
+db = SQL("postgres://nwltosgdqfhmvy:a2964f4e3e6f7a2bd67a1edb99303e92268b25a153d50603eea0fb7e5208dcc9@ec2-52-202-146-43.compute-1.amazonaws.com:5432/d4cc5vcu9i82un")
 
 @app.route("/")
 def index():
@@ -37,20 +37,6 @@ def index():
 def register():
     """Register user"""
     if request.method == "POST":
-
-        # Ensure username was submitted
-        if not request.form.get("username"):
-            return apology("must provide username", 403)
-
-        # Ensure password was submitted
-        elif not request.form.get("password"):
-            return apology("must provide password", 403)
-
-        elif not request.form.get("confirmation"):
-            return apology("must confirm password", 403)
-
-        elif request.form.get("confirmation") !=  request.form.get("password"):
-            return apology("passwords must match", 403)
 
         rows = db.execute("SELECT * FROM users WHERE username = :username",
                           username=request.form.get("username"))
@@ -148,7 +134,7 @@ def forum():
     posts = []
 
 
-    rows = db.execute("SELECT * FROM posts ORDER BY upvotes DESC")
+    rows = db.execute("SELECT * FROM posts")
 
     for index, row in enumerate(rows):
         op = db.execute("SELECT * FROM comments WHERE post_id = :identification",
@@ -199,30 +185,26 @@ def submit():
 
         author = session.get("username")
 
+        print(author)
+
         title = request.form.get("title")
 
-        txtlist = []
-
         text = request.form.get("text")
-
-        txtlist.append(str(text))
-
-        print(txtlist)
 
         print(datetime.now())
 
 
-        post = db.execute("INSERT INTO posts (author, title, description, timestamp) VALUES (:author, :title, :text + CHAR(10), :timestamp)", author=author, title=title, text=text, timestamp=datetime.now())
+        if session.get("username") == None:
+            return redirect("/login")
+
+        post = db.execute("INSERT INTO posts (author, title, description, timestamp) VALUES (:author, :title, :text, :timestamp)", author=author, title=title, text=text, timestamp=datetime.now())
 
         print(post)
 
         # add post into database
         #post = db.execute("INSERT INTO posts (author, title, description, timestamp) VALUES (:author, :title, :text, :timestamp)", author=author, title=title, text=formatted_text, timestamp=datetime.now())
 
-        if session.get("username") == None:
-            return redirect("/login")
-        else:
-            return redirect("/forum")
+        return redirect("/forum")
     # User reached route via GET (as by clicking a link or via redirect)
     else:
         return render_template("submit.html")
