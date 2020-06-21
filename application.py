@@ -193,7 +193,6 @@ def comments():
 
 
 @app.route("/submit", methods=['GET', 'POST'])
-@login_required
 def submit():
     """Register user"""
     if request.method == "POST":
@@ -220,8 +219,10 @@ def submit():
         # add post into database
         #post = db.execute("INSERT INTO posts (author, title, description, timestamp) VALUES (:author, :title, :text, :timestamp)", author=author, title=title, text=formatted_text, timestamp=datetime.now())
 
-
-        return redirect("/forum")
+        if session.get("username") == None:
+            return redirect("/login")
+        else:
+            return redirect("/forum")
     # User reached route via GET (as by clicking a link or via redirect)
     else:
         return render_template("submit.html")
