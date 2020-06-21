@@ -1,0 +1,72 @@
+body
+{
+    background-color: lightcyan;
+    font-family: Inconsolata, monospace;
+    font-size: 40px;
+	font-size: 4.0rem;
+	font-weight: 500;
+	line-height: 1.875;
+	margin: 0;
+}
+
+.button
+{
+    font-family: courier, monospace;
+    font-size: 15px;
+	font-size: 1.5rem;
+	font-weight: 500;
+	line-height: 1.875;
+}
+
+.navbar-brand
+{
+	font-family: courier, monospace;
+}
+
+a:link {
+  color: black;
+  font-weight: 600;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: black;
+}
+
+a:active {
+  color: black;
+}
+
+.center
+{
+  text-align: center;
+
+}
+
+.smallheadings
+{
+	font-family: Inconsolata, monospace;
+    font-size: 30px;
+	font-size: 3.0rem;
+	font-weight: 500;
+	line-height: 1.875;
+	text-align: left;
+	padding-left: 20px;
+}
+
+.smalltext
+{
+	font-family: Inconsolata, monospace;
+    font-size: 27px;
+	font-size: 1.7rem;
+	font-weight: 300;
+	line-height: 1.875;
+	text-align: left;
+	padding-left: 20px;
+
+}
+
+

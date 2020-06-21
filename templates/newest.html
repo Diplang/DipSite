@@ -1,0 +1,74 @@
+<link rel="stylesheet" href="/static/solarized-dark.css"/>
+    <link rel="stylesheet" href="/static/vendor_10880690442070639967.css"/>
+    <link rel="stylesheet" href="/static/fonts_8049871103083011125.css"/>
+    <link rel="stylesheet" href="/static/app_12353512879680388157.css"/>
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="static/dip logo.png">
+
+
+    <nav class="flex flex-row justify-center justify-end-l items-center flex-wrap ph2 pl3-ns pr4-ns pb3">
+  <div class="brand flex-auto w-100 w-auto-l self-start tc tl-l">
+    <a href="/" class="brand">
+      <img class="v-mid ml0-l" alt="Dip Logo" src="/static/dip logo.png">
+
+    </a>
+  </div>
+
+  <ul class="nav list w-100 w-auto-l flex flex-none flex-row flex-wrap justify-center justify-end-l items-center pv2 ph0 ph4-ns">
+    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="/try">Try Dip</a></li>
+    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="/about">About</a></li>
+    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="/docs">Documentation</a></li>
+    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="/forum">Forum</a></li>
+    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="/install">Install</a></li>
+  </ul>
+
+
+
+</nav>
+
+<title>Dip Programming Language: Newest Posts</title>
+
+<nav class="center">
+  <ul class="nav list w-100 w-auto-l flex flex-none flex-row flex-wrap justify-center justify-end-l items-center pv2 ph0 ph4-ns center">
+    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="/forum">Dip Forum</a></li>
+    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="/newest">New</a></li>
+    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="/comments">Comments</a></li>
+    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="/submit">Submit</a></li>
+  </ul>
+
+
+
+</nav>
+
+
+
+{% for post in posts %}
+<section class="white thanks">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center">
+    <header>
+      <h2><a href = posts/{{ post[2] }}>{{ post[0] }}</a></h2>
+      <div class="highlight"class = "center" style = "font-size: 40px;"></div>
+      <h3 style = "font-size: 20px; padding-left: 15px; padding-bottom: 15px; padding-top: 15px;">{{ post[3] }}  | {{ post[4] }} | {{ post[5] }} comments</h3>
+    </header>
+  </div>
+</section>
+
+{% endfor %}
+
+<footer style="background-color:white">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <div class="flex flex-column flex-row-ns pv0-l">
+      <div class="flex flex-column mw8 w-100 measure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l" id="get-help">
+        <h4 style="color:black">Get help!</h4>
+        <ul>
+          <li><a href="/docs">Documentation</a></li>
+          <li><a href="/forum">Ask a Question on the forum</a></li>
+        </ul>
+
+      </div>
+
+    </div>
+  </div>
+</footer>
+
