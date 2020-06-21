@@ -1,6 +1,6 @@
 import os
 
-import cs50
+from cs50 import SQL
 from flask import Flask, flash, jsonify, redirect, render_template, request, session
 from flask_session import Session
 from tempfile import mkdtemp
@@ -26,7 +26,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Use SQLite database
-db = cs50.SQL("postgres://jpzydtilypgjqa:ad520b6e9f0cdcc3fb5ad071fac219757f32e144e5f1a7d22626c3547e86552b@ec2-34-193-232-231.compute-1.amazonaws.com:5432/d9u7qnigk6llbo")
+db = SQL("postgres://jpzydtilypgjqa:ad520b6e9f0cdcc3fb5ad071fac219757f32e144e5f1a7d22626c3547e86552b@ec2-34-193-232-231.compute-1.amazonaws.com:5432/d9u7qnigk6llbo")
 
 @app.route("/")
 def index():
