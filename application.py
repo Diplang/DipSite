@@ -1,6 +1,6 @@
 import os
 
-from cs50 import SQL
+import cs50
 from flask import Flask, flash, jsonify, redirect, render_template, request, session
 from flask_session import Session
 from tempfile import mkdtemp
@@ -26,7 +26,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Use SQLite database
-db = SQL("postgres://nwltosgdqfhmvy:a2964f4e3e6f7a2bd67a1edb99303e92268b25a153d50603eea0fb7e5208dcc9@ec2-52-202-146-43.compute-1.amazonaws.com:5432/d4cc5vcu9i82un")
+db =  cs50.SQL("postgres://nwltosgdqfhmvy:a2964f4e3e6f7a2bd67a1edb99303e92268b25a153d50603eea0fb7e5208dcc9@ec2-52-202-146-43.compute-1.amazonaws.com:5432/d4cc5vcu9i82un")
 
 @app.route("/")
 def index():
@@ -57,8 +57,6 @@ def register():
 def login():
     """Log user in"""
 
-    # Forget any user_id
-    session.clear()
 
     # User reached route via POST (as by submitting a form via POST)
     if request.method == "POST":
@@ -80,6 +78,7 @@ def login():
 
         # Redirect user to home page
         return redirect("/")
+
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
