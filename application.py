@@ -53,17 +53,19 @@ def register():
     else:
         return render_template("signup.html")
 
-@app.route("/login", methods=["GET", "POST"])
+@app.route("/login", methods=['GET', 'POST'])
 def login():
     """Log user in"""
 
+    session.clear()
 
     # User reached route via POST (as by submitting a form via POST)
     if request.method == "POST":
 
-
         rows = db.execute("SELECT * FROM users WHERE username = :username",
                           username=request.form.get("username"))
+
+        print(rows)
 
 
         # Ensure username exists and password is correct
