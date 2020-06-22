@@ -11,6 +11,7 @@ from helpers import apology, login_required, lookup, usd
 from dreamscript import *
 from parser import *
 from datetime import datetime
+import psycopg2
 
 # Configure application
 app = Flask(__name__)
@@ -51,10 +52,16 @@ def register():
 
         pword = request.form.get("password")
 
+        conn = psycopg2.connect("postgres://yagqggxlzasyks:dd4225e4d6b34be3409ea16e9d16240403c1cfccd94decc86c8e87703ee8f5c8@ec2-52-0-155-79.compute-1.amazonaws.com:5432/d3026drc6so9qe")
+        cur = conn.cursor()
+
+        query = """INSERT INTO users (username, hash) VALUES (%s,%s)"""
+        info = (usrname, generate_password_hash(pword))
 
         # add user into database
-        user = db.execute("INSERT INTO users (username, hash) VALUES (:username, :password);", username=usrname, password=generate_password_hash(pword))
+        user = cur.execute(query, info)
 
+        conn.commit()
 
         return redirect("/login")
     # User reached route via GET (as by clicking a link or via redirect)
@@ -206,9 +213,17 @@ def submit():
         if session.get("username") == None:
             return redirect("/login")
 
-        post = db.execute("INSERT INTO posts (author, title, description, timestamp) VALUES (:author, :title, :text, :timestamp)", author=author, title=title, text=text, timestamp=datetime.now())
+        conn = psycopg2.connect("postgres://yagqggxlzasyks:dd4225e4d6b34be3409ea16e9d16240403c1cfccd94decc86c8e87703ee8f5c8@ec2-52-0-155-79.compute-1.amazonaws.com:5432/d3026drc6so9qe")
+        cur = conn.cursor()
 
-        print("post: ", post)
+        query = """INSERT INTO posts (author, title, description, timestamp) VALUES (%s, %s, %s, %s)"""
+        info = (author, title, text, datetime.now())
+
+        # add user into database
+        post = cur.execute(query, info)
+
+        conn.commit()
+
 
         # add post into database
         #post = db.execute("INSERT INTO posts (author, title, description, timestamp) VALUES (:author, :title, :text, :timestamp)", author=author, title=title, text=formatted_text, timestamp=datetime.now())
@@ -257,8 +272,16 @@ def individual(iden):
 
         content = request.form.get("description")
 
+        conn = psycopg2.connect("postgres://yagqggxlzasyks:dd4225e4d6b34be3409ea16e9d16240403c1cfccd94decc86c8e87703ee8f5c8@ec2-52-0-155-79.compute-1.amazonaws.com:5432/d3026drc6so9qe")
+        cur = conn.cursor()
 
-        comments = db.execute("INSERT INTO comments (post_id, author, content) VALUES (:post_id, :author, :content)", post_id=iden[0]["id"], author=session.get("username"), content=content)
+        query = """INSERT INTO comments (post_id, author, content, timestamp) VALUES (%s, %s, %s, %s)"""
+        info = (iden[0]["id"], session.get("username"), content, datetime.now())
+
+        # add user into database
+        user = cur.execute(query, info)
+
+        conn.commit()
 
         return redirect("/posts/" + str(iden[0]["id"]))
 
