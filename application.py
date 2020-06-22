@@ -26,7 +26,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Use SQLite database
-db =  cs50.SQL("postgres://nwltosgdqfhmvy:a2964f4e3e6f7a2bd67a1edb99303e92268b25a153d50603eea0fb7e5208dcc9@ec2-52-202-146-43.compute-1.amazonaws.com:5432/d4cc5vcu9i82un")
+db =  cs50.SQL("postgres://yagqggxlzasyks:dd4225e4d6b34be3409ea16e9d16240403c1cfccd94decc86c8e87703ee8f5c8@ec2-52-0-155-79.compute-1.amazonaws.com:5432/d3026drc6so9qe")
 
 @app.route("/")
 def index():
