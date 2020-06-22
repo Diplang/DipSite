@@ -1,6 +1,6 @@
 import os
 
-import cs50
+from cs50 import SQL
 from flask import Flask, flash, jsonify, redirect, render_template, request, session
 from flask_session import Session
 from tempfile import mkdtemp
@@ -26,7 +26,8 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Use SQLite database
-db =  cs50.SQL("postgres://yagqggxlzasyks:dd4225e4d6b34be3409ea16e9d16240403c1cfccd94decc86c8e87703ee8f5c8@ec2-52-0-155-79.compute-1.amazonaws.com:5432/d3026drc6so9qe")
+db =  SQL("postgres://yagqggxlzasyks:dd4225e4d6b34be3409ea16e9d16240403c1cfccd94decc86c8e87703ee8f5c8@ec2-52-0-155-79.compute-1.amazonaws.com:5432/d3026drc6so9qe")
+
 
 @app.route("/")
 def index():
@@ -41,14 +42,21 @@ def register():
         rows = db.execute("SELECT * FROM users WHERE username = :username",
                           username=request.form.get("username"))
 
-        # Ensure username doesn't exist
+
+        # Ensure username doesn 't exist
         if len(rows) == 1:
             return apology("Username already exists", 403)
 
-        # add user into database
-        user = db.execute("INSERT INTO users (username, hash) VALUES (:username, :password)", username=request.form.get("username"), password=generate_password_hash(request.form.get("password")))
+        usrname = request.form.get("username")
 
-        return redirect("/")
+        pword = request.form.get("password")
+
+
+        # add user into database
+        user = db.execute("INSERT INTO users (username, hash) VALUES (:username, :password);", username=usrname, password=generate_password_hash(pword))
+
+
+        return redirect("/login")
     # User reached route via GET (as by clicking a link or via redirect)
     else:
         return render_template("signup.html")
@@ -79,7 +87,7 @@ def login():
 
 
         # Redirect user to home page
-        return redirect("/")
+        return redirect("/forum")
 
 
     # User reached route via GET (as by clicking a link or via redirect)
@@ -181,12 +189,13 @@ def comments():
 
 @app.route("/submit", methods=['GET', 'POST'])
 def submit():
-    """Register user"""
+    """Submit post"""
+    print("forum: ", session.get("username"))
+
     if request.method == "POST":
 
         author = session.get("username")
 
-        print(author)
 
         title = request.form.get("title")
 
@@ -194,13 +203,12 @@ def submit():
 
         print(datetime.now())
 
-
         if session.get("username") == None:
             return redirect("/login")
 
         post = db.execute("INSERT INTO posts (author, title, description, timestamp) VALUES (:author, :title, :text, :timestamp)", author=author, title=title, text=text, timestamp=datetime.now())
 
-        print(post)
+        print("post: ", post)
 
         # add post into database
         #post = db.execute("INSERT INTO posts (author, title, description, timestamp) VALUES (:author, :title, :text, :timestamp)", author=author, title=title, text=formatted_text, timestamp=datetime.now())
