@@ -192,9 +192,7 @@ def comments():
         print(row)
         query = """SELECT title FROM posts WHERE id = :identification"""
 
-        args = identification=row["post_id"]
-
-        op = cur.execute(query, args)
+        op = db.execute("SELECT title FROM posts WHERE id = :identification", identification=row["post_id"])
 
         print(row["content"])
         print(row["author"])
@@ -202,7 +200,7 @@ def comments():
         print(row["timestamp"])
         print(op)
 
-        posts.append(list((row["content"], row["author"], row["post_id"], row["timestamp"], op[0]['title'])))
+        posts.append(list((row["content"], row["author"], row["post_id"], row["timestamp"])))
 
 
 
