@@ -183,13 +183,29 @@ def comments():
 
     posts = []
 
-
     rows = db.execute("SELECT * FROM comments ORDER BY timestamp DESC")
 
+    print(rows)
+
+
     for index, row in enumerate(rows):
-        op = db.execute("SELECT title FROM posts WHERE id = :identification",
-                          identification=row["post_id"])
+        print(row)
+        query = """SELECT title FROM posts WHERE id = :identification"""
+
+        args = identification=row["post_id"]
+
+        op = cur.execute(query, args)
+
+        print(row["content"])
+        print(row["author"])
+        print(row["post_id"])
+        print(row["timestamp"])
+        print(op)
+
         posts.append(list((row["content"], row["author"], row["post_id"], row["timestamp"], op[0]['title'])))
+
+
+
 
     return render_template("comments.html",posts=posts)
 
