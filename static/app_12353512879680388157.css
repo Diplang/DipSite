@@ -226,22 +226,22 @@ a.brand {
     text-decoration: none; }
     .green .button.button-secondary:hover, .green .button.button-secondary:focus {
       border-color: black; }
-
 .blue {
- background-color: #87cefa;
+  background-color: #87cefa;
   color: black; }
   .blue .highlight {
     background-color: #ff6347; }
   .blue a {
-    color: white;
+    color: black;
     text-decoration: underline; }
   .blue .button.button-secondary {
     background-color: #ff6347;
     border-color: #ff6347;
-    color: white;
+    color: black;
     text-decoration: none; }
     .blue .button.button-secondary:hover, .blue .button.button-secondary:focus {
-      border-color: white; }
+      border-color: black; }
+
 
 
 
