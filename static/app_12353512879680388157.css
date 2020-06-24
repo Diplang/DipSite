@@ -217,15 +217,15 @@ a.brand {
   .green .highlight {
     background-color: #ff6347; }
   .green a {
-    color: black;
+    color: white;
     text-decoration: underline; }
   .green .button.button-secondary {
     background-color: #ff6347;
     border-color: #ff6347;
-    color: black;
+    color: white;
     text-decoration: none; }
     .green .button.button-secondary:hover, .green .button.button-secondary:focus {
-      border-color: black; }
+      border-color: white; }
 
 .blue {
   background-color: #87cefa;
