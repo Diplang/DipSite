@@ -230,17 +230,17 @@ a.brand {
 .blue {
  background-color: #87cefa;
   color: black; }
-  .green .highlight {
+  .blue .highlight {
     background-color: #ff6347; }
-  .green a {
+  .blue a {
     color: white;
     text-decoration: underline; }
-  .green .button.button-secondary {
+  .blue .button.button-secondary {
     background-color: #ff6347;
     border-color: #ff6347;
     color: white;
     text-decoration: none; }
-    .green .button.button-secondary:hover, .green .button.button-secondary:focus {
+    .blue .button.button-secondary:hover, .blue .button.button-secondary:focus {
       border-color: white; }
 
 
