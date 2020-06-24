@@ -213,22 +213,6 @@ a.brand {
 
 .green {
   background-color: #87cefa;
-  color: white; }
-  .green .highlight {
-    background-color: #ff6347; }
-  .green a {
-    color: black;
-    text-decoration: underline; }
-  .green .button.button-secondary {
-    background-color: #ff6347;
-    border-color: #ff6347;
-    color: black;
-    text-decoration: none; }
-    .green .button.button-secondary:hover, .green .button.button-secondary:focus {
-      border-color: black; }
-
-.greenish {
-  background-color: #87cefa;
   color: black; }
   .green .highlight {
     background-color: #ff6347; }
@@ -242,11 +226,11 @@ a.brand {
     text-decoration: none; }
     .green .button.button-secondary:hover, .green .button.button-secondary:focus {
       border-color: black; }
-
 
 .blue {
   background-color: #87cefa;
   color: black; }
+
   .blue .highlight {
     background-color: #ff6347; }
   .blue a {
