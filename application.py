@@ -348,3 +348,8 @@ def about():
 def install():
     """Show Install page"""
     return render_template("install.html")
+
+@app.route("/examples")
+def examples():
+    """Show Example page"""
+    return render_template("examples.html")
