@@ -1,7 +1,7 @@
 # IMPORTS
 
 from string_with_arrows import *
-import string 
+import string
 import os
 import math
 import random
@@ -12,7 +12,7 @@ from lexer import *
 from data_types import *
 from interpreter import *
 from symbol_table import *
-from context import *    
+from context import *
 from runtime_result import *
 from position import *
 
@@ -48,7 +48,8 @@ BuiltInFunction.wait      = BuiltInFunction("wait")
 BuiltInFunction.error      = BuiltInFunction("error")
 BuiltInFunction.read      = BuiltInFunction("read")
 BuiltInFunction.write      = BuiltInFunction("write")
-
+BuiltInFunction.eval      = BuiltInFunction("eval")
+BuiltInFunction.function      = BuiltInFunction("function")
 
 #######################################
 # RUN
@@ -91,6 +92,8 @@ global_symbol_table.set("wait", BuiltInFunction.wait)
 global_symbol_table.set("error", BuiltInFunction.error)
 global_symbol_table.set("read", BuiltInFunction.read)
 global_symbol_table.set("write", BuiltInFunction.write)
+global_symbol_table.set("evaluate", BuiltInFunction.eval)
+global_symbol_table.set("func", BuiltInFunction.function)
 
 
 def run(fn, text):
@@ -98,7 +101,7 @@ def run(fn, text):
         lexer = Lexer(fn, text)
         tokens, error = lexer.make_tokens()
         if error: return None, error
-        
+
         # Generate AST
         parser = Parser(tokens)
         ast = parser.parse()
