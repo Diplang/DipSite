@@ -176,6 +176,7 @@ function odd_or_even(number)</br>
     if number % 2 == 0 then print(&quot;even&quot;) else print(&quot;odd&quot;)</br>
 end
 </code></p>
+<p>Some functions return values. These values can then be assigned to variables</p>
 <p>Read more about functions in the builtin functions section!</p>
 <p><strong>Errors</strong></p>
 <p>Errors are generated automatically when the user tries to evaluate invalid code. Dip contains 5
@@ -214,7 +215,54 @@ Dip&gt; error(&quot;test error&quot;)</br>
 Custom Error: test error</br>
  </code>
 These errors can then be used like the built-in errors.</p>
+
+<h2 id="dip-s-data-types">Statements in Dip</h2>
+<p>In Dip, each statement is separated by a newline.</p>
+<code>print("x")</br>print("y")</code></br>
+<p>In the above example, Dip's lexer categorises these as two statements. If you wish to make two statements in one line, these can be separated by a semicolon</p>
+<code>print("x"); print("y")</code>
+
+
+<h2 id="dip-s-data-types">Variables in Dip</h2>
+<p>Variables in Dip can be assigned with the 'variable' keyword, like so (variables must be assigned a value at declaration):</p>
+<code><span class="hljs-keyword">variable</span> <span class="hljs-comment">x = 1</span></code></br>
+You can also define multiple variables in the same line</br>
+<code><span class="hljs-keyword">variable</span> <span class="hljs-comment">x = <span class="hljs-keyword">variable</span> <span class="hljs-comment">y = <span class="hljs-keyword">variable</span> <span class="hljs-comment">z = 1</span></code></br>
+You can change a variable's value after defining it. For example:</br>
+<code><span class="hljs-keyword">variable</span> <span class="hljs-comment">x = 1</span></code> can be changed to <code><span class="hljs-keyword">variable</span> <span class="hljs-comment">x = "one"</span></code></br>
+</br>Variables can then be used in functions, lists and any data type Dip supports.
+</br>
+
+<h2 id="dip-s-data-types">Operators in Dip</h2>
+<p>Dip supports 5 operators, +, -, *, / and %</p>
+<code>The + operator can be used to add two values</code> </br>
+<code>The - operator can be used to subtract one value from the other</code></br>
+<code>The * operator can be used to multiply two values</code> </br>
+<code>The / operator can be used to divide two values</code> </br>
+<code>The % operator can be used to find the remainder when two values are divided</code> </br>
+<code>These operators can be used in conditionals.</code>
+
+
+
+<h2 id="dip-s-data-types">Conditionals in Dip</h2>
+<p>Conditional statements, or an if then statement in Dip can be written like so: </p>
+<code><span class="hljs-keyword">variable</span> <span class="hljs-comment">x = 1</span></code></br>
+<code><span class="hljs-keyword">if</span> <span class="hljs-comment">x == 1 <span class="hljs-keyword">then</span> <span class="hljs-comment"> <span class="hljs-keyword">print</span> <span class="hljs-comment">("x = 1")</span></code></br>
+This statement prints out ("x = 1") to the screen </br></br>
+You can also have multi line if statements, which can be ended using 'end'</br></br>
+<code><span class="hljs-keyword">if</span> <span class="hljs-comment">x == 1 <span class="hljs-keyword">then</br>
+         </span> <span class="hljs-comment"> <span class="hljs-keyword">print</span> <span class="hljs-comment">("x = 1")</span></br>
+          <span class="hljs-keyword">print</span>(x)</br>
+<span class="hljs-keyword">end</span></br></br>
+</code>
+This statement prints out the following:</br></br>
+<code>"x = 1"</br>1</code>
+</br>
+</br>
 </div>
+
+
+
 
 
 <div class = "blue" style = "padding-left: 15px">
@@ -233,6 +281,19 @@ Dip&gt; say(&quot;hi!&quot;)</br>
 0</br>
 Dip&gt;
 </code></p>
+<p><strong>Read</strong></p>
+<p>Reads the content of any given file. Returns the contents of the file.</p>
+<p><code>Dip&gt; read("example.txt")</br>
+"This is an example file"</br>
+Dip&gt;</code></p>
+<p><strong>Write</strong></p>
+<p>Writes something to any given file. Accepts two arguments, one is the file name, and the other is the content. Returns the length of you have written.</p>
+<p><code>Dip&gt; write("example.txt", "This is what I have written to this file")</br>
+"This is what I have written to this file"</br>
+Dip&gt; read("example.txt")</br>
+"This is an example file</br>
+This is what I have written to this file"</code></p>
+
 <p><strong>Random Int</strong></p>
 <p>Selects a random integer from the range given to it</p>
 <p><code>Dip&gt; random_int(0, 10)</br>
@@ -245,7 +306,7 @@ Dip&gt; random_int(0, 10)</br>
 <p>Gets the square root of the number given to it</p>
 <p><code>Dip&gt; root(4)</br>
 2.0</code></p>
-<p><em>*Sin</em></p>
+<p><strong>Sin</strong></p>
 <p>Calculates the sin value of a given number</p>
 <p><code>Dip&gt; sin(45)</br>
 0.8509035245341184</code></p>
@@ -348,7 +409,7 @@ File Dip Shell, line 1</p>
 <p><code>Dip&gt; wait(3)</br>
 </code></p>
 <p><strong>open()</strong></p>
-<p>Opens the website name given in the argument</p>
+<p>Opens the website name given in the argument. Returns nothing</p>
 <p><code>Dip&gt; open(&quot;google.com&quot;)</code></p>
 </div>
 </div>
