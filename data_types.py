@@ -14,11 +14,18 @@ import dreamscript as ds
 import webbrowser as wb
 import time as time
 import config
+import exec_return
 
 veryimp = 0
 toprint = []
 tp = ""
+global i
 
+
+def my_exec(code):
+    exec(f'global i; i = {code}')
+    global i
+    return i
 
 def reset():
     global toprint
@@ -723,43 +730,19 @@ class BuiltInFunction(BaseFunction):
 
     def execute_eval(self, exec_ctx):
         statement = str(exec_ctx.symbol_table.get("arg"))
-
         try:
-            return RTResult().success(exec(statement))
+            exec_return.exec_with_return(statement)
+            print("myexec-sttement",  exec_return.exec_with_return(statement))
+            return RTResult().success(exec_return.exec_with_return(statement))
         except Exception as e:
             return RTResult().failure(RTError(
                 self.pos_start, self.pos_end,
                 str(e),
                 exec_ctx
             ))
-
-        x = exec("1 - 1")
-
-        print(x)
-
-        return RTResult().success(x)
 
     execute_eval.arg_names = ["arg"]
 
-    def execute_function(self, exec_ctx):
-        statement = str(exec_ctx.symbol_table.get("funcname"))
-        argument = str(exec_ctx.symbol_table.get("args"))
-
-        try:
-            exec(f"{statement}({argument})")
-        except Exception as e:
-            return RTResult().failure(RTError(
-                self.pos_start, self.pos_end,
-                str(e),
-                exec_ctx
-            ))
-
-
-
-        return RTResult().success(exec(f"{statement}({argument})"))
-
-
-    execute_function.arg_names = ["funcname", "args"]
 
 
     def execute_extend(self, exec_ctx):
