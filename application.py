@@ -356,3 +356,8 @@ def install():
 def examples():
     """Show Example page"""
     return render_template("examples.html")
+
+@app.route("/tutorial")
+def tutorial():
+    """Show Tutorial page"""
+    return render_template("tutorial.html")

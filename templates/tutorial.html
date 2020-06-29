@@ -1,0 +1,397 @@
+
+<!doctype html>
+<html lang="en-US">
+  <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-154661488-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-154661488-1');
+</script>
+    <meta charset="utf-8">
+    <title>
+
+            Tutorial - Dip Programming Language
+
+        </title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="A language empowering everyone to build reliable and efficient software.">
+
+
+
+    <!-- styles -->
+    <link rel="stylesheet" href="/static/solarized-dark.css"/>
+    <link rel="stylesheet" href="/static/vendor_10880690442070639967.css"/>
+    <link rel="stylesheet" href="/static/fonts_8049871103083011125.css"/>
+    <link rel="stylesheet" href="/static/app_12353512879680388157.css"/>
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="static/dip logo.png">
+
+
+
+
+    <!-- Custom Highlight pack with: Rust, Markdown, TOML, Bash, JSON, YAML,
+         and plaintext. -->
+    <script src="/static/scripts/highlight.pack.js" defer></script>
+    <script src="/static/scripts/init.js" defer></script>
+  </head>
+  <body>
+    <nav class="flex flex-row justify-center justify-end-l items-center flex-wrap ph2 pl3-ns pr4-ns pb3">
+  <div class="brand flex-auto w-100 w-auto-l self-start tc tl-l">
+    <a href="/" class="brand">
+      <img class="v-mid ml0-l" alt="Dio Logo" src="/static/dip logo.png">
+
+
+    </a>
+  </div>
+
+  <ul class="nav list w-100 w-auto-l flex flex-none flex-row flex-wrap justify-center justify-end-l items-center pv2 ph0 ph4-ns">
+    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="/try">Try Dip</a></li>
+    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="/about">About</a></li>
+    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="/docs">Documentation</a></li>
+    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="/forum">Forum</a></li>
+    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="/install">Install</a></li>
+  </ul>
+
+  </div>
+
+</nav>
+
+    <main>
+
+<header class="mt3 mt2-ns mb4 mb5-ns tc tl-ns">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3 ">
+    <h1>Dip's Tutorial</h1>
+    <h2 class="subtitle">The step by step learning path to start coding with Dip.</h2>
+  </div>
+</header>
+
+<section id="installing-rust" class="white">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <header>
+      <h2>Learning to code with Dip</h2>
+      <div class="highlight highlight"></div>
+    </header>
+    <p>The best way to get the hang of coding is to start. Get the hang of coding with Dip by trying some basic programs. Try the below programs in Dip. If you get stuck, scroll down to see our implementation.</p>
+    <ol>
+      A program that asks the user his / her name, and greets them.
+    </ol>
+    <ol>
+      A program that asks the user his / her name, and greets them.
+    </ol>
+    <ol>
+      Make a calculator in Dip, which performs basic operations on numbers.
+    </ol>
+    <hr />
+
+    <h3>Our Implementation</h3>
+    <h1 id="factorial-function">greet.dip</h1>
+<pre><code>
+# A program to greet the user.
+
+variable name =  input("Enter Your Name: ")
+
+print("Hello, " + name + "!")
+</code></pre><p>
+</code></p>
+
+<h1 id="factorial-function">greet.dip</h1>
+<pre><code># A program to greet the user.
+
+variable name =  input("Enter Your Name: ")
+
+print("Hello, " + name + "!")
+</code></pre><p>
+</code></p>
+
+<h1 id="factorial-function">calculator.dip</h1>
+<pre><code># A calculator program in Dip
+
+# Greet the user
+print("Welcome to Dip's calculator")
+
+# Give the user four options
+
+print("Press 1 for addition")
+print("Press 2 for subtraction")
+print("Press 3 for multiplication")
+print("Press 4 for division")
+
+# Ensure the code keeps on looping
+
+while true then
+
+    # Ask user for the operation they want to perform
+
+    variable operation = input_integer("Operation: ")
+
+    # If the operation is 1, 2, 3 or 4 then procedd
+
+    if operation == 1 or operation == 2 or operation == 3 or operation == 4 then
+
+        variable num1 = input_integer("Enter first number: ")
+        variable num2 = input_integer("Enter second number: ")
+
+        if operation == 1 then print(num1 + num2)
+
+        if operation == 2 then print(num1 - num2)
+
+        if operation == 3 then print(num1 * num2)
+
+        if operation == 4 then print(num1 / num2)
+
+        # If the operation is not in 1, 2, 3 or 4 then prompt the user again
+
+        else
+            print("Input must be 1, 2, 3 or 4")
+            continue
+
+    end
+end
+</code></pre><p>
+</code></p>
+
+  <p>After these programs, you can move on to programs that are a little more complex</p>
+
+  </div>
+</section>
+
+<section id="installing-rust" class="white">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <header>
+      <h2>Intermediate programming with Dip</h2>
+      <div class="highlight highlight"></div>
+    </header>
+    <p>The best way to get the hang of coding is to start. Get the hang of coding with Dip by trying some basic programs. Try the below programs in Dip. If you get stuck, scroll down to see our implementation.</p>
+    <ol>
+      A program that asks the user his / her name, and greets them.
+    </ol>
+    <ol>
+      A program that asks the user his / her name, and greets them.
+    </ol>
+    <ol>
+      Make a calculator in Dip, which performs basic operations on numbers.
+    </ol>
+    <hr />
+
+    <h3>Our Implementation</h3>
+    <h1 id="factorial-function">greet.dip</h1>
+<pre><code>
+# A program to greet the user.
+
+variable name =  input("Enter Your Name: ")
+
+print("Hello, " + name + "!")
+</code></pre><p>
+</code></p>
+
+<h1 id="factorial-function">greet.dip</h1>
+<pre><code># A program to greet the user.
+
+variable name =  input("Enter Your Name: ")
+
+print("Hello, " + name + "!")
+</code></pre><p>
+</code></p>
+
+<h1 id="factorial-function">calculator.dip</h1>
+<pre><code># A calculator program in Dip
+
+# Greet the user
+print("Welcome to Dip's calculator")
+
+# Give the user four options
+
+print("Press 1 for addition")
+print("Press 2 for subtraction")
+print("Press 3 for multiplication")
+print("Press 4 for division")
+
+# Ensure the code keeps on looping
+
+while true then
+
+    # Ask user for the operation they want to perform
+
+    variable operation = input_integer("Operation: ")
+
+    # If the operation is 1, 2, 3 or 4 then procedd
+
+    if operation == 1 or operation == 2 or operation == 3 or operation == 4 then
+
+        variable num1 = input_integer("Enter first number: ")
+        variable num2 = input_integer("Enter second number: ")
+
+        if operation == 1 then print(num1 + num2)
+
+        if operation == 2 then print(num1 - num2)
+
+        if operation == 3 then print(num1 * num2)
+
+        if operation == 4 then print(num1 / num2)
+
+        # If the operation is not in 1, 2, 3 or 4 then prompt the user again
+
+        else
+            print("Input must be 1, 2, 3 or 4")
+            continue
+
+    end
+end
+</code></pre><p>
+</code></p>
+
+  <p>After these programs, you can move on to programs that are a little more complex</p>
+
+  </div>
+</section>
+
+
+<section id="installing-dependencies" class="white">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <header>
+      <h2>Dip for Veterans</h2>
+      <div class="highlight"></div>
+    </header>
+    <p>If you're a coding veteran - Dip has you covered. Using Dip, you can embrace the power of Python using an easier syntax.</p>
+<p>The following program shows an example of a Dip and Python program that prints out the calendar for a given year.</p>
+
+  <h1 id="factorial-function">calendar.dip</h1>
+<pre><code># A program to print out the calendar of a particular year in Dip
+
+# Greet the user
+print("Welcome to Dip's calculator")
+
+# Give the user four options
+
+print("Press 1 for addition")
+print("Press 2 for subtraction")
+print("Press 3 for multiplication")
+print("Press 4 for division")
+
+# Ensure the code keeps on looping
+
+while true then
+
+    # Ask user for the operation they want to perform
+
+    variable operation = input_integer("Operation: ")
+
+    # If the operation is 1, 2, 3 or 4 then procedd
+
+    if operation == 1 or operation == 2 or operation == 3 or operation == 4 then
+
+        variable num1 = input_integer("Enter first number: ")
+        variable num2 = input_integer("Enter second number: ")
+
+        if operation == 1 then print(num1 + num2)
+
+        if operation == 2 then print(num1 - num2)
+
+        if operation == 3 then print(num1 * num2)
+
+        if operation == 4 then print(num1 / num2)
+
+        # If the operation is not in 1, 2, 3 or 4 then prompt the user again
+
+        else
+            print("Input must be 1, 2, 3 or 4")
+            continue
+
+    end
+end
+</code></pre><p>
+</code></p>
+
+  </div>
+</section>
+
+
+<section id="a-small-rust-app" class="green">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <header>
+      <h2>A small Dip application</h2>
+      <div class="highlight"></div>
+    </header>
+    <p>Now let’s write a small application with our new dependency. In our <code>main.dip</code>, add the following code:</p>
+
+<pre><code>use("stdlib/bleu_says.dip") # from the previous step
+
+function main()
+    variable message = "Hello, world!"
+    bleu(message)
+end
+
+main()
+    </code></pre>
+
+<p>Once we save that, we can run our application by typing:</p>
+<p><code>run("main.dip")</code></p>
+<p>Assuming everything went well, you should see your application print this to the screen:</p>
+
+    <pre><code>-----------------
+| Hello, world! |
+-----------------
+                    \
+                     \
+                      \
+                           ▓▓▓▓▓▓▓▓▓▓
+                         ▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+                        ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+                      ▓▓▓▓░░░░░░▓▓░░░░░░▓▓▓▓
+                  ░░░░▓▓░░░░░░░░░░░░░░░░░░▓▓░░░░
+                  ░░░░▓▓░░  ██░░░░░░  ██░░▓▓░░░░
+                    ░░▓▓░░████░░░░░░████░░▓▓░░
+                      ▓▓░░▒▒▒▒░░░░░░▒▒▒▒░░▓▓
+                        ▓▓░░░░░░░░░░░░░░▓▓
+                          ▓▓▓▓░░░░░░▓▓▓▓
+                              ▓▓▓▓▓▓        ░░
+                            ▓▓▓▓▓▓▓▓▓▓      ▓▓
+                            ▓▓▓▓▓▓▓▓▓▓    ▓▓▓▓
+                          ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+                          ▓▓▓▓░░▓▓░░▓▓▓▓
+
+    </code></pre>
+
+
+  </div>
+</section>
+
+<section id="read-the-docs" class="white thanks">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <header>
+      <h2>Learn more!</h2>
+      <div class="highlight"></div>
+    </header>
+    <p>If you're looking to learn more, head to our Docs page, where you can find lots of information that will help you to continue learning to code with Dip.</p>
+    <a href="/docs" class="button button-secondary">learn more!</a>
+  </div>
+</section>
+
+
+
+    </main>
+    <footer class = "green">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <div class="flex flex-column flex-row-ns pv0-l">
+      <div class="flex flex-column mw8 w-100 measure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l" id="get-help">
+        <h4>Get help!</h4>
+        <ul>
+          <li><a href="/docs">Documentation</a></li>
+          <li><a href="/forum">Ask a Question on the forum</a></li>
+        </ul>
+
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+
+    <script src="/static/scripts/languages.js"></script>
+  </body>
+</html>
