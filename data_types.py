@@ -728,21 +728,6 @@ class BuiltInFunction(BaseFunction):
 
     execute_write.arg_names = ["fn", "content"]
 
-    def execute_eval(self, exec_ctx):
-        statement = str(exec_ctx.symbol_table.get("arg"))
-        try:
-            exec_return.exec_with_return(statement)
-            print("myexec-sttement",  exec_return.exec_with_return(statement))
-            return RTResult().success(exec_return.exec_with_return(statement))
-        except Exception as e:
-            return RTResult().failure(RTError(
-                self.pos_start, self.pos_end,
-                str(e),
-                exec_ctx
-            ))
-
-    execute_eval.arg_names = ["arg"]
-
 
 
     def execute_extend(self, exec_ctx):
