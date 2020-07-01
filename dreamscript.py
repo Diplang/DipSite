@@ -92,8 +92,7 @@ global_symbol_table.set("wait", BuiltInFunction.wait)
 global_symbol_table.set("error", BuiltInFunction.error)
 global_symbol_table.set("read", BuiltInFunction.read)
 global_symbol_table.set("write", BuiltInFunction.write)
-global_symbol_table.set("evaluate", BuiltInFunction.eval)
-global_symbol_table.set("func", BuiltInFunction.function)
+
 
 
 def run(fn, text):
