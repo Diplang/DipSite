@@ -71,8 +71,8 @@
       <div class="highlight highlight"></div>
     </header>
     <h2 class="subtitle">The step by step learning path to start coding with Dip.</h2></br>
-    <p>Dip is aimed at beginners starting to learn to code. It is by no means complete, and does not wish to compete with the mainstream languages of today. However, it does prove a good place to start learning to code</p>
-    <p>I recommend starting out as a beginner, and learning more about Dip and its syntax. After this, move on to the next section, and when done with that, start working on complex programs with Dip</p>
+    <p>Dip is aimed at beginners starting to learn to code. It is by no means complete, and does not aim to compete with the mainstream languages of today. However, it does prove a good place to start learning to code.</p>
+    <p>I recommend starting out as a beginner, and learning more about Dip and its syntax. After this, move on to the next section, and when done with that, start working on complex programs with Dip.</p>
     <div id="top" class="mw-50-l mr4-l pt0 flex flex-column justify-between-l">
         <h3>I am a beginner</h3>
         <a style = "scroll-behavior: smooth;" href="#beginner" class="button button-secondary">Dip's Exercises for Beginners</a>
@@ -172,115 +172,114 @@
   </div>
 </section>
 
-<section id="installing-dependencies" class="green">
+<section id="beginner" class="white thanks">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>Dip for Veterans</h2>
-      <div class="highlight"></div>
+      <h2>Dip programming for veterans</h2>
+      <div class="highlight highlight"></div>
     </header>
-    <p>If you're a coding veteran - Dip has you covered. Using Dip, you can embrace the power of Python using an easier syntax.</p>
-<p>The following program shows an example of a Dip and Python program that prints out the calendar for a given year.</p>
+    <p>Don't worry if you're a programming veteran. You can still have a lot of fun with Dip</p>
+    <div id="top" class="mw-50-l mr4-l pt0 flex flex-column justify-between-l">
+        <h3>The factorial program never gets old. Try to implement the factorial functionin Dip</h3>
+        <a href="#factorial" class="button button-secondary">Let's go!</a>
+    </div></br>
+    <div id="top" class="mw-50-l mr4-l pt0 flex flex-column justify-between-l">
+        <h3>Try the famous fibonacci program in Dip, using recursion</h3>
+        <a href="#fibonacci" class="button button-secondary">Let's go!</a>
+    </div></br>
+    <div id="top" class="mw-50-l mr4-l pt0 flex flex-column justify-between-l">
+        <h3>Put your Dip and Python skills to the test and create a Dip-Python program that does something</h3>
+        <a href="#python" class="button button-secondary">Let's go!</a>
+    </div>
+  </div>
+</section>
 
-  <h1 id="factorial-function">calendar.dip</h1>
-<pre><code># A program to print out the calendar of a particular year in Dip
+<section id="factorial" class="green">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <header>
+      <h2>The Factorial Function</h2>
+      <div class="highlight highlight"></div>
+    </header>
+    <p>Open a new file, and write the following code to implement the factorial function! (You should probably try it out yourself before looking at this):</p>
+<pre><code><span class="hljs-keyword">function</span> factorial(term)</br><span class="hljs-keyword">variable</span> fact = <span class="hljs-number">1</span>
+<span class="hljs-keyword">if</span> term &gt;= <span class="hljs-number">1</span> <span class="hljs-keyword">then</span>
+    <span class="hljs-keyword">for</span> i = <span class="hljs-number">1</span> <span class="hljs-keyword">to</span> term + <span class="hljs-number">1</span> <span class="hljs-keyword">then</span>
+        <span class="hljs-keyword">variable</span> fact = fact * i
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+print(fact)
+</br>end
+</code></pre><p>
+</code></p>
+    <p>That's the factorial function in Dip. Next, you should try out either the fibonacci function, or learn to use Dip with Python. If you want something more challenging, I have also made a list of recommendations!</p>
 
-# Greet the user
-print("Welcome to Dip's calculator")
+  </div>
+</section>
 
-# Give the user four options
+<section id="fibonacci" class="white thanks">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <header>
+      <h2>Do it in Dip: The Fibonacci Function</h2>
+      <div class="highlight highlight"></div>
+    </header>
+    <pre><code><span class="hljs-keyword">function</span> fib(nterms)</br><span class="hljs-keyword">variable</span> n1 <span class="hljs-comment">= 0</span>
+<span class="hljs-keyword">variable</span> <span class="hljs-comment">n2 = 1</span>
+<span class="hljs-keyword">variable</span> <span class="hljs-comment">count = 0</span>
 
-print("Press 1 for addition")
-print("Press 2 for subtraction")
-print("Press 3 for multiplication")
-print("Press 4 for division")
-
-# Ensure the code keeps on looping
-
-while true then
-
-    # Ask user for the operation they want to perform
-
-    variable operation = input_integer("Operation: ")
-
-    # If the operation is 1, 2, 3 or 4 then procedd
-
-    if operation == 1 or operation == 2 or operation == 3 or operation == 4 then
-
-        variable num1 = input_integer("Enter first number: ")
-        variable num2 = input_integer("Enter second number: ")
-
-        if operation == 1 then print(num1 + num2)
-
-        if operation == 2 then print(num1 - num2)
-
-        if operation == 3 then print(num1 * num2)
-
-        if operation == 4 then print(num1 / num2)
-
-        # If the operation is not in 1, 2, 3 or 4 then prompt the user again
-
-        else
-            print("Input must be 1, 2, 3 or 4")
-            continue
-
+if <span class="hljs-comment">nterms &lt;= 0 then print(</span><span class="hljs-comment">"Input a positive integer"</span><span class="hljs-comment">)</span>
+if <span class="hljs-comment">nterms == 1 then</span>
+    print(<span class="hljs-string">"Fibonnaci sequence upto"</span> + <span class="hljs-string">" 1"</span> + <span class="hljs-string">":"</span>)
+    print(n1)
+else
+    print(<span class="hljs-string">"Fibonacci sequence:"</span>)
+    while <span class="hljs-comment">count &lt; nterms then</span>
+        print(n1)
+        <span class="hljs-keyword">variable</span> <span class="hljs-comment">nth = n1 + n2</span>
+        <span class="hljs-keyword">variable</span> <span class="hljs-comment">n1 = n2</span>
+        <span class="hljs-keyword">variable</span> <span class="hljs-comment">n2 = nth</span>
+        <span class="hljs-keyword">variable</span> <span class="hljs-comment">count = count + 1</span>
     end
+end
 end
 </code></pre><p>
 </code></p>
-
+    <p>An old classic, the fibonacci function. However, keep in mind that there is more than one way to do this. Try out your own implementation of fibonacci (perhaps using recursion), and post it on the forum!</p>
   </div>
 </section>
 
-
-<section id="a-small-rust-app" class="green">
+<section id="fibonacci" class="green">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>A small Dip application</h2>
-      <div class="highlight"></div>
+      <h2>Python and Dip: Teamwork</h2>
+      <div class="highlight highlight"></div>
     </header>
-    <p>Now let’s write a small application with our new dependency. In our <code>main.dip</code>, add the following code:</p>
+    <pre><code><span class="hljs-keyword">function</span> fib(nterms)</br><span class="hljs-keyword">variable</span> n1 <span class="hljs-comment">= 0</span>
+<span class="hljs-keyword">variable</span> <span class="hljs-comment">n2 = 1</span>
+<span class="hljs-keyword">variable</span> <span class="hljs-comment">count = 0</span>
 
-<pre><code>use("stdlib/bleu_says.dip") # from the previous step
-
-function main()
-    variable message = "Hello, world!"
-    bleu(message)
+if <span class="hljs-comment">nterms &lt;= 0 then print(</span><span class="hljs-comment">"Input a positive integer"</span><span class="hljs-comment">)</span>
+if <span class="hljs-comment">nterms == 1 then</span>
+    print(<span class="hljs-string">"Fibonnaci sequence upto"</span> + <span class="hljs-string">" 1"</span> + <span class="hljs-string">":"</span>)
+    print(n1)
+else
+    print(<span class="hljs-string">"Fibonacci sequence:"</span>)
+    while <span class="hljs-comment">count &lt; nterms then</span>
+        print(n1)
+        <span class="hljs-keyword">variable</span> <span class="hljs-comment">nth = n1 + n2</span>
+        <span class="hljs-keyword">variable</span> <span class="hljs-comment">n1 = n2</span>
+        <span class="hljs-keyword">variable</span> <span class="hljs-comment">n2 = nth</span>
+        <span class="hljs-keyword">variable</span> <span class="hljs-comment">count = count + 1</span>
+    end
 end
-
-main()
-    </code></pre>
-
-<p>Once we save that, we can run our application by typing:</p>
-<p><code>run("main.dip")</code></p>
-<p>Assuming everything went well, you should see your application print this to the screen:</p>
-
-    <pre><code>-----------------
-| Hello, world! |
------------------
-                    \
-                     \
-                      \
-                           ▓▓▓▓▓▓▓▓▓▓
-                         ▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-                        ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-                      ▓▓▓▓░░░░░░▓▓░░░░░░▓▓▓▓
-                  ░░░░▓▓░░░░░░░░░░░░░░░░░░▓▓░░░░
-                  ░░░░▓▓░░  ██░░░░░░  ██░░▓▓░░░░
-                    ░░▓▓░░████░░░░░░████░░▓▓░░
-                      ▓▓░░▒▒▒▒░░░░░░▒▒▒▒░░▓▓
-                        ▓▓░░░░░░░░░░░░░░▓▓
-                          ▓▓▓▓░░░░░░▓▓▓▓
-                              ▓▓▓▓▓▓        ░░
-                            ▓▓▓▓▓▓▓▓▓▓      ▓▓
-                            ▓▓▓▓▓▓▓▓▓▓    ▓▓▓▓
-                          ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-                          ▓▓▓▓░░▓▓░░▓▓▓▓
-
-    </code></pre>
-
-
+end
+</code></pre><p>
+</code></p>
+    <p>An old classic, the fibonacci function. However, keep in mind that there is more than one way to do this. Try out your own implementation of fibonacci (perhaps using recursion), and post it on the forum!</p>
   </div>
 </section>
+
+
+
 
 <section id="read-the-docs" class="white thanks">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
@@ -292,6 +291,8 @@ main()
     <a href="/docs" class="button button-secondary">learn more!</a>
   </div>
 </section>
+
+
 
 
 
