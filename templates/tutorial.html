@@ -63,195 +63,117 @@
 
     <main>
 
-<header class="mt3 mt2-ns mb4 mb5-ns tc tl-ns">
-  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3 ">
-    <h1>Dip's Tutorial</h1>
-    <h2 class="subtitle">The step by step learning path to start coding with Dip.</h2>
-  </div>
-</header>
 
-<section id="installing-rust" class="white">
+<section id="installing-rust" class="green">
+  <div style = "scroll-behavior: smooth;" class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <header>
+      <h2>Dip's Tutorial</h2>
+      <div class="highlight highlight"></div>
+    </header>
+    <h2 class="subtitle">The step by step learning path to start coding with Dip.</h2></br>
+    <p>Dip is aimed at beginners starting to learn to code. It is by no means complete, and does not wish to compete with the mainstream languages of today. However, it does prove a good place to start learning to code</p>
+    <p>I recommend starting out as a beginner, and learning more about Dip and its syntax. After this, move on to the next section, and when done with that, start working on complex programs with Dip</p>
+    <div id="top" class="mw-50-l mr4-l pt0 flex flex-column justify-between-l">
+        <h3>I am a beginner</h3>
+        <a style = "scroll-behavior: smooth;" href="#beginner" class="button button-secondary">Dip's Exercises for Beginners</a>
+    </div>
+    </br>
+    <div id="top" class="mw-50-l mr4-l pt0 flex flex-column justify-between-l">
+        <h3>I know a bit about code</h3>
+        <a style = "scroll-behavior: smooth;" href="#intermediate" class="button button-secondary">Dip's Exercises for Intermediates</a>
+    </div>
+    </br>
+    <div id="top" class="mw-50-l mr4-l pt0 flex flex-column justify-between-l">
+        <h3>I can code well</h3>
+        <a style = "scroll-behavior: smooth;" href="#advanced" class="button button-secondary">Advanced Exercises</a>
+    </div>
+  </div>
+</section>
+
+<section id="beginner" class="white thanks">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
       <h2>Learning to code with Dip</h2>
       <div class="highlight highlight"></div>
     </header>
-    <p>The best way to get the hang of coding is to start. Get the hang of coding with Dip by trying some basic programs. Try the below programs in Dip. If you get stuck, scroll down to see our implementation.</p>
-    <ol>
-      A program that asks the user his / her name, and greets them.
-    </ol>
-    <ol>
-      A program that asks the user his / her name, and greets them.
-    </ol>
-    <ol>
-      Make a calculator in Dip, which performs basic operations on numbers.
-    </ol>
-    <hr />
-
-    <h3>Our Implementation</h3>
-    <h1 id="factorial-function">greet.dip</h1>
-<pre><code>
-# A program to greet the user.
-
-variable name =  input("Enter Your Name: ")
-
-print("Hello, " + name + "!")
-</code></pre><p>
-</code></p>
-
-<h1 id="factorial-function">greet.dip</h1>
-<pre><code># A program to greet the user.
-
-variable name =  input("Enter Your Name: ")
-
-print("Hello, " + name + "!")
-</code></pre><p>
-</code></p>
-
-<h1 id="factorial-function">calculator.dip</h1>
-<pre><code># A calculator program in Dip
-
-# Greet the user
-print("Welcome to Dip's calculator")
-
-# Give the user four options
-
-print("Press 1 for addition")
-print("Press 2 for subtraction")
-print("Press 3 for multiplication")
-print("Press 4 for division")
-
-# Ensure the code keeps on looping
-
-while true then
-
-    # Ask user for the operation they want to perform
-
-    variable operation = input_integer("Operation: ")
-
-    # If the operation is 1, 2, 3 or 4 then procedd
-
-    if operation == 1 or operation == 2 or operation == 3 or operation == 4 then
-
-        variable num1 = input_integer("Enter first number: ")
-        variable num2 = input_integer("Enter second number: ")
-
-        if operation == 1 then print(num1 + num2)
-
-        if operation == 2 then print(num1 - num2)
-
-        if operation == 3 then print(num1 * num2)
-
-        if operation == 4 then print(num1 / num2)
-
-        # If the operation is not in 1, 2, 3 or 4 then prompt the user again
-
-        else
-            print("Input must be 1, 2, 3 or 4")
-            continue
-
-    end
-end
-</code></pre><p>
-</code></p>
-
-  <p>After these programs, you can move on to programs that are a little more complex</p>
-
+    <p>Getting started with programming can be a daunting task. That's why I want to make it simple for you. Start out doing the following experiments with Dip, and familiarise yourself with the language</p>
+    <div id="top" class="mw-50-l mr4-l pt0 flex flex-column justify-between-l">
+        <h3>Get started by using Dip's environment as a calculator, and familiarise yourself with its syntax</h3>
+        <a href="#calculator" class="button button-secondary">Let's go!</a>
+    </div></br>
+    <div id="top" class="mw-50-l mr4-l pt0 flex flex-column justify-between-l">
+        <h3>Build a program to ask the user for their name and present them with a greeting</h3>
+        <a href="#greeter" class="button button-secondary">Let's go!</a>
+    </div></br>
+    <div id="top" class="mw-50-l mr4-l pt0 flex flex-column justify-between-l">
+        <h3>Put your skills to the test and create a dip program that adds any two numbers</h3>
+        <a href="#adder" class="button button-secondary">Let's go!</a>
+    </div>
   </div>
 </section>
 
-<section id="installing-rust" class="white">
+<section id="calculator" class="green">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>Intermediate programming with Dip</h2>
+      <h2>Calculating With Dip's Environment</h2>
       <div class="highlight highlight"></div>
     </header>
-    <p>The best way to get the hang of coding is to start. Get the hang of coding with Dip by trying some basic programs. Try the below programs in Dip. If you get stuck, scroll down to see our implementation.</p>
-    <ol>
-      A program that asks the user his / her name, and greets them.
-    </ol>
-    <ol>
-      A program that asks the user his / her name, and greets them.
-    </ol>
-    <ol>
-      Make a calculator in Dip, which performs basic operations on numbers.
-    </ol>
-    <hr />
+    <p>Learn to use Dip's environment like a calculator. Start by trying to add two numbers, like so:</p>
+    <code>Dip> 1 + 1</code></br></br>
+    <p>This will give you the output of 2. Try to familiarise yourself with the Dip environment by trying similar operations. Try using the '-' symbol to subtract numbers, the '*' symbol to multiply values, and the '/' symbol to divide values. Some examples could be:</p>
+    <code>Dip> 45 - 24</code></br>
+    <code>Dip> 6 * 4/code></code></br>
+    <code>Dip> 7 / 7</code></br>
+    <code>Dip> 5 + (10 * 4) / 5</code></br></br>
+    <p>Next, you can also try to use the '^' symbol to denote exponents, and the '%' symbol to calculate the modulus of a value</p>
+     <code>Dip> 7 ^ 7</code></br>
+    <code>Dip> 5 % 5</code></br></br>
+    <p>Great! You've learned how to use the Dip environment for making calculations, and that's a great step. Let's move on to building a simple application with Dip</p>
 
-    <h3>Our Implementation</h3>
-    <h1 id="factorial-function">greet.dip</h1>
-<pre><code>
-# A program to greet the user.
+  </div>
+</section>
 
-variable name =  input("Enter Your Name: ")
+<section id="greeter" class="white thanks">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <header>
+      <h2>Writing your first Dip program: Greeting the user</h2>
+      <div class="highlight highlight"></div>
+    </header>
+    <p>Now you've learnt to use Dip' environment like a calculator, let's write our first program in Dip!</p>
+    <p>Open the Dip terminal and type the following (I recommend trying it yourself before looking at this):</p>
+    <code>Dip> function greet(name) -> print("Hi, " + name)</code></br></br>
+    <p>You should see this as the output:</p>
+    <code>function greet</code></br></br>
+    <code>Dip> greet("Raghav")</code></br></br>
+    <code>Hi, Raghav</code></br></br>
+    <p>How does it feel after creating your first program in Dip! If you wish to, you can customise this program, asking the age and location of the user</p>
+  </div>
+</section>
 
-print("Hello, " + name + "!")
-</code></pre><p>
-</code></p>
-
-<h1 id="factorial-function">greet.dip</h1>
-<pre><code># A program to greet the user.
-
-variable name =  input("Enter Your Name: ")
-
-print("Hello, " + name + "!")
-</code></pre><p>
-</code></p>
-
-<h1 id="factorial-function">calculator.dip</h1>
-<pre><code># A calculator program in Dip
-
-# Greet the user
-print("Welcome to Dip's calculator")
-
-# Give the user four options
-
-print("Press 1 for addition")
-print("Press 2 for subtraction")
-print("Press 3 for multiplication")
-print("Press 4 for division")
-
-# Ensure the code keeps on looping
-
-while true then
-
-    # Ask user for the operation they want to perform
-
-    variable operation = input_integer("Operation: ")
-
-    # If the operation is 1, 2, 3 or 4 then procedd
-
-    if operation == 1 or operation == 2 or operation == 3 or operation == 4 then
-
-        variable num1 = input_integer("Enter first number: ")
-        variable num2 = input_integer("Enter second number: ")
-
-        if operation == 1 then print(num1 + num2)
-
-        if operation == 2 then print(num1 - num2)
-
-        if operation == 3 then print(num1 * num2)
-
-        if operation == 4 then print(num1 / num2)
-
-        # If the operation is not in 1, 2, 3 or 4 then prompt the user again
-
-        else
-            print("Input must be 1, 2, 3 or 4")
-            continue
-
-    end
-end
-</code></pre><p>
-</code></p>
-
-  <p>After these programs, you can move on to programs that are a little more complex</p>
+<section id="adder" class="white thanks">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <header>
+      <h2>Looking Further - Creating a simple calculator in Dip</h2>
+      <div class="highlight highlight"></div>
+    </header>
+    <p>So you've learnt how to use the Dip editor as a calculator, and have written your first program. What better than to join these together, and create a program that adds two numbers?</p>
+    <p>Open the Dip terminal and type the following (As usual, try it out yourself before looking at this :) ):</p>
+    <code>Dip> function add(num1, num2) -> print(num1 + num2)</code></br></br>
+    <p>You should see this as the output:</p>
+    <code>function add</code></br></br>
+    <code>Dip> add(2, 5)</code></br></br>
+    <code>7</code></br></br>
+    <p>You can also add strings!</p>
+    <code>Dip> add("Hi, ", "Raghav")</code></br></br>
+    <code>Hi, Raghav</code></br></br>
+    <p>Feel free to customise this program, substituting it with subtraction, multiplication or division!</p>
+    <p>Great! You've learnt the basics of Dip! Move on to the intermediate section to write more complicated programs in Dip</p>
 
   </div>
 </section>
 
 
-<section id="installing-dependencies" class="white">
+<section id="installing-dependencies" class="green">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
       <h2>Dip for Veterans</h2>

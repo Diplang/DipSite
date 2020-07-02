@@ -245,7 +245,9 @@ a.brand {
       border-color: black; }
 
 
-
+html {
+  scroll-behavior: smooth;
+}
 
 
 .white {
