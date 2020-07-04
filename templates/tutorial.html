@@ -53,6 +53,8 @@
     <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="/try">Try Dip</a></li>
     <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="/about">About</a></li>
     <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="/docs">Documentation</a></li>
+    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="/tutorial">Tutorial</a></li>
+    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="/examples">Examples</a></li>
     <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="/forum">Forum</a></li>
     <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="/install">Install</a></li>
   </ul>
@@ -85,7 +87,7 @@
     </br>
     <div id="top" class="mw-50-l mr4-l pt0 flex flex-column justify-between-l">
         <h3>I can code well</h3>
-        <a style = "scroll-behavior: smooth;" href="#advanced" class="button button-secondary">Advanced Exercises</a>
+        <a style = "scroll-behavior: smooth;" href="#advanced" class="button button-secondary">Dip's Exercises for Veterans</a>
     </div>
   </div>
 </section>
@@ -139,7 +141,7 @@
       <h2>Writing your first Dip program: Greeting the user</h2>
       <div class="highlight highlight"></div>
     </header>
-    <p>Now you've learnt to use Dip' environment like a calculator, let's write our first program in Dip!</p>
+    <p>Now you've learnt to use Dip's environment like a calculator, let's write our first program in Dip!</p>
     <p>Open the Dip terminal and type the following (I recommend trying it yourself before looking at this):</p>
     <code>Dip> function greet(name) -> print("Hi, " + name)</code></br></br>
     <p>You should see this as the output:</p>
@@ -172,13 +174,257 @@
   </div>
 </section>
 
+<section id="intermediate" class="white thanks">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <header>
+      <h2>Writing Complex Programs With Dip</h2>
+      <div class="highlight highlight"></div>
+    </header>
+    <p>Learn to run external files with Dip, recreate an old method of encryption, and pick up from were you left off in the previous section!</p>
+    <div id="top" class="mw-50-l mr4-l pt0 flex flex-column justify-between-l">
+        <h3>Learn to evaluate external files and start writing programs in .dip files. Then, make a program to test the properties of triangles!</h3>
+        <a href="#files" class="button button-secondary">Let's go!</a>
+    </div></br>
+    <div id="top" class="mw-50-l mr4-l pt0 flex flex-column justify-between-l">
+        <h3>Learn to build a message encrypter - using the Caesar cipher, to encrypt messages!</h3>
+        <a href="#caesar" class="button button-secondary">Let's go!</a>
+    </div></br>
+    <div id="top" class="mw-50-l mr4-l pt0 flex flex-column justify-between-l">
+        <h3>Finally, build a calclator program that can add, subtract, multiply or divide any numbers!</h3>
+        <a href="#calc2" class="button button-secondary">Let's go!</a>
+    </div>
+  </div>
+</section>
+
+<section id="files" class="green">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <header>
+      <h2>Expanding Horizons</h2>
+      <div class="highlight highlight"></div>
+    </header>
+    <p>Now that you've learnt to use Dip's basic features, let's move on to writing some complex programs with Dip.</p>
+     <p>It&#39;s possible to load external files written in Dip by calling the ‘run’ function inside the Dip
+    interface by executing the run function followed by the relative path of the files that you want to
+    be evaluated.</p>
+    <p><code>Dip Beta (Version 0.1)</br>
+    Type "help", "copyright", "credits" or "about" for more information.
+    </code>
+    </br>
+    <p>This can be done like so</p>
+    <code>Dip&gt; run(&quot;/Users/raghav/Desktop/hello_dip.dip&quot;)
+    </br>
+    Hello, Dip
+    </code></p>
+    <p>Great! You've learnt how to evaluate external files. Now, we'll try to make a simple program that checks (upon getting the angles) whether a triangle is valid or not. To create this, let's first think about a few rules triangles have.</p>
+    <ol>
+      <li>All triangles have 3 angles</li>
+      <li>The sum of these angles must be equal to 180 degrees</li>
+      <li>No angle can be equal to zero</li>
+    </ol>
+
+    <p>Now that we know a bit about triangles, make a new file called <code>triangle.dip</code> in which we'll start designing this program</p>
+
+    <p>Let's start by asking the user for 3 inputs for the three angles of the triangle.</p>
+
+    <pre><code>variable angle1 = input_integer("Enter the measure of the first angle:  ")
+
+variable angle2 = input_integer("Enter the measure of the second angle:  ")
+
+variable angle3 = input_integer("Enter the measure of the third angle:  ")
+    </code></pre>
+
+  <p>Next, let's add all the angles and see if their sum is equal to 180. Also, let's ensure that none of the angles equals to zero.</p>
+
+  <pre><code>variable sum = angle1 + angle2 + angle3
+
+if sum == 180 and angle1 != 0 and angle2 != 0 and angle3 != 0 then
+ print("Yay, it's a valid triangle :)")
+else
+    print("Sorry, not a valid triangle :(")
+end</code></pre>
+
+<p>That's it! We can now run this program from the Dip interface using the run command and see the results!</p>
+
+
+  </div>
+</section>
+
+<section id="caesar" class="white thanks">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <header>
+      <h2>The Encryption Game: Implementing the Caesar cipher in Dip</h2>
+      <div class="highlight highlight"></div>
+    </header>
+    <p>Great! You've got so far! Now, it's time to make something interesting, and put your skills to the test, and try to replicate the Caesar cipher in Dip</p>
+    <p>First, let's Get to know a bit about Caesar's method of encrypting messages</p>
+    <h2>The Caesar Cipher</h2>
+    <p>Supposedly, Caesar (yes, that Caesar) used to “encrypt” (i.e., conceal in a reversible way) confidential messages by shifting each letter therein by some number of places. For instance, he might write A as B, B as C, C as D, …, and, wrapping around alphabetically, Z as A. And so, to say HELLO to someone, Caesar might write IFMMP. Upon receiving such messages from Caesar, recipients would have to “decrypt” them by shifting letters in the opposite direction by the same number of places.</p>
+    <p>The secrecy of this “cryptosystem” relied on only Caesar and the recipients knowing a secret, the number of places by which Caesar had shifted his letters (e.g., 1). Not particularly secure by modern standards, but, hey, if you’re perhaps the first in the world to do it, pretty secure!
+
+Unencrypted text is generally called plaintext. Encrypted text is generally called ciphertext. And the secret used is called a key.</p>
+
+<p>To be clear, then, here’s how encrypting <code class="highlighter-rouge">HELLO</code> with a key of 1 yields <code class="highlighter-rouge">IFMMP</code>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>plaintext</th>
+      <th>H</th>
+      <th>E</th>
+      <th>L</th>
+      <th>L</th>
+      <th>O</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>+ key</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>= ciphertext</td>
+      <td>I</td>
+      <td>F</td>
+      <td>M</td>
+      <td>M</td>
+      <td>P</td>
+    </tr>
+  </tbody>
+</table></br>
+
+<h2>Getting Started</h2>
+
+    <p>Now that you know a bit about the cipher, create a new file in your favourite text editor, and name it caesar.dip</p>
+    <p>Now, let's start by creating a list of all the alpabets, so we can tell Dip what we consider valid plaintext. Note that this is a very basic version Caesar's cipher, meant to introduce you to Dip's concepts.</p>
+
+    <p>Please note that you should probably comment your code using the '#' sybmol. I am not doing it, because my code is accompanied with text explaining it</p>
+
+    <code>variable alphabet = "abcdefghijklmnopqrstuvwxyz "</code></br></br>
+
+    <p>This line of code is basically telling us that the alphabet consists of these letters</p>
+
+    <p>Next, let's get the user's input, so we can get the plaintext he wants us to encrypt</p>
+
+    <code>variable plaintext = input("Which word / phrase would you like to encrypt: ")</code></br></br>
+
+
+    <p>Now, let's ask for the key, <code>variable key = input_integer("What would you like the key to be? ")</code></p>
+
+    <p>Note that I have used <code>input_integer</code> here in order to ensure the user behaves themselves and only gives us integers as they key.</p>
+
+    <p>Now, we can create an empty string called ciphertext, by doing<code>variable ciphertext = ""</code></p>
+
+    <p>After this, we can now start to loop over each letter in the plaitext and substitute it will the letter that results, when offset by the key</p>
+
+    <pre><code>for character = 0 to length(plaintext) then
+    for letter = 0 to length(alphabet) then
+        if plaintext / character == alphabet / letter then
+            if plaintext / character != " " then
+                variable index = letter + key
+                variable ciphertext = ciphertext + alphabet / (index % 26)
+            else
+                variable ciphertext = ciphertext + " "
+            end
+        end
+    end
+end
+</code></pre><p>
+
+
+  <p>This block of code first loops over each letter in the plaintext. Then it also starts looping over each letter in the alphabet, and checks letter by letter, whether the plaintext is part of the English alphabet. If it is, then it substitutes it with the corresponding letter x places ahead of it (here, x is they key provided). Then, it checks if the current character is a space, and adds it to the ciphertext. Bu\y the end, the program has added all of the letters to the ciphertext, and the encryption is done!</p>
+
+  <p>To see our encrypted output, we can then print the ciphertext<code>print("ciphertext: " + ciphertext)</code></p>
+
+  <p>That's it, we've recreated Caesar's method of encryption in Dip! Try it out with a few words and phrases, by running <code>run("caesar.dip")</code> in the Dip environment (Make sure it is in the same directory as the Dip executable)!</p>
+
+  <h4>Examples</h4>
+
+  <pre><code>
+    Dip>  run("examples/caesar.dip")
+    Which word / phrase would you like to encrypt: hello
+    What would you like the key to be? 1
+    ciphertext: ifmmp
+  </code></pre>
+
+   <pre><code>
+    Dip>  run("examples/caesar.dip")
+    Which word / phrase would you like to encrypt: hello
+    What would you like the key to be? 1
+    ciphertext: ifmmp
+  </code></pre>
+
+  </div>
+</section>
+
+<section id="calc2" class="green">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <header>
+      <h2>The final stage - Creating a full blown calculator in Dip</h2>
+      <div class="highlight highlight"></div>
+    </header>
+    <p>Let's pick up from where we left off in the beginner exercises, by creating a program to add two numbers. Now, let's make a full-blown calculator, that prompts the user for their input, asking for two numbers and then adds, subtracts, multiplies or divides the two.</p>
+    <p>Open a new file, and call it calculator.dip. Now, I'll leave the implementation up to you. See this as your transition from a Dip learner to a Dip user. However, feel free to look at my implementation down below.</p>
+
+    <pre><code># A calculator program in Dip
+# Greet the user
+print("Welcome to Dip's calculator")
+
+# Give the user four options
+
+print("Press 1 for addition")
+print("Press 2 for subtraction")
+print("Press 3 for multiplication")
+print("Press 4 for division")
+
+# Ensure the code keeps on looping
+
+while true then
+
+    # Ask user for the operation they want to perform
+
+    variable operation = input_integer("Operation: ")
+
+    # If the operation is 1, 2, 3 or 4 then procedd
+
+    if operation == 1 or operation == 2 or operation == 3 or operation == 4 then
+
+        variable num1 = input_integer("Enter first number: ")
+        variable num2 = input_integer("Enter second number: ")
+
+        if operation == 1 then print(num1 + num2)
+
+        if operation == 2 then print(num1 - num2)
+
+        if operation == 3 then print(num1 * num2)
+
+        if operation == 4 then print(num1 / num2)
+
+        # If the operation is not in 1, 2, 3 or 4 then prompt the user again
+
+        else
+            print("Input must be 1, 2, 3 or 4")
+            continue
+
+    end
+end
+
+    </code></pre>
+
+  </div>
+</section>
+
+
 <section id="advanced" class="white thanks">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
       <h2>Dip programming for veterans</h2>
       <div class="highlight highlight"></div>
     </header>
-    <p>Don't worry if you're a programming veteran. You can still have a lot of fun with Dip</p>
+    <p>Don't worry if you're a programming veteran. Test how Dip and Python can work together!</p>
     <div id="top" class="mw-50-l mr4-l pt0 flex flex-column justify-between-l">
         <h3>The factorial program never gets old. Try to implement the factorial functionin Dip</h3>
         <a href="#factorial" class="button button-secondary">Let's go!</a>
@@ -247,41 +493,52 @@ end
   </div>
 </section>
 
-<section id="fibonacci" class="green">
+<section id="python" class="green">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>Python and Dip: Teamwork</h2>
+      <h2>Python and Dip: The Dream Team</h2>
       <div class="highlight highlight"></div>
     </header>
-    <pre><code><span class="hljs-keyword">function</span> fib(nterms)</br><span class="hljs-keyword">variable</span> n1 <span class="hljs-comment">= 0</span>
-<span class="hljs-keyword">variable</span> <span class="hljs-comment">n2 = 1</span>
-<span class="hljs-keyword">variable</span> <span class="hljs-comment">count = 0</span>
+    <p>To start, Python and Dip are clearly not the dream team, that was more of a joke. Dip was written in Python, and that's why it can interact with it, and maybe be useful in some small cases.</p>
+    <p>I wanted to show you an example of such a case. In this section, you'll create a working GUI application using Dip and Python!</p>
+    <h2>A simple GUI app to print your name to the interface.</h2>
 
-if <span class="hljs-comment">nterms &lt;= 0 then print(</span><span class="hljs-comment">"Input a positive integer"</span><span class="hljs-comment">)</span>
-if <span class="hljs-comment">nterms == 1 then</span>
-    print(<span class="hljs-string">"Fibonnaci sequence upto"</span> + <span class="hljs-string">" 1"</span> + <span class="hljs-string">":"</span>)
-    print(n1)
-else
-    print(<span class="hljs-string">"Fibonacci sequence:"</span>)
-    while <span class="hljs-comment">count &lt; nterms then</span>
-        print(n1)
-        <span class="hljs-keyword">variable</span> <span class="hljs-comment">nth = n1 + n2</span>
-        <span class="hljs-keyword">variable</span> <span class="hljs-comment">n1 = n2</span>
-        <span class="hljs-keyword">variable</span> <span class="hljs-comment">n2 = nth</span>
-        <span class="hljs-keyword">variable</span> <span class="hljs-comment">count = count + 1</span>
-    end
-end
-end
-</code></pre><p>
-</code></p>
-    <p>An old classic, the fibonacci function. However, keep in mind that there is more than one way to do this. Try out your own implementation of fibonacci (perhaps using recursion), and post it on the forum!</p>
+    <p>We'll be making both the apps using Python's Tkinter library, since Dip does not have support for GUI (currently).</p>
+
+    <p>Let's start with a simple Dip statement asking the user for their name <code>variable name = input("What's your name? ")</code></p>
+
+
+    <p>Now comes the tricky part, connecting Dip with Python. The way Dip aims to connect Dip and Python is by letting Dip communicate with Python. This way we can run python programs through the Dip interface, and can try to do interesting things with Python and Dip.</p>
+
+    <p>So, let's create a variable called python_code. This will contain all of our Python code. We can start by creating a GUI window in Python, and initialising it.</p>
+
+    <code>variable python_code = "import tkinter as tk;" + "root = tk.Tk();" + "label = tk.Label(root, text='Hello, " + name + "').pack()"</code></br></br>
+
+    <p>What this code does, is creates a GUI Window in Python using the Tkinter library. Then, it creates a new label where text will be printed, and substitutes the text to be printed with the 'name' variable we had defined earlier. This way, whatever the user inputs can be used to display their name in the GUI window.</p>
+
+    <p>To show our results, we can then write <code>evaluate(python_code)</code> to evaluate our Python code</p>
+
+    <p>Upon running this program from the Dip interface, and entering our name, this is the result that awaits us:</p>
+
+    <image src = "static/gui.png" alt = "GUI screen showing your name"></image></br>
+
+    <p>Great! You've created your first GUI program with Dip and Python. Now that we've learnt how to create GUI application with Python and Dip, you can take this in any direction, creating all sorts of GUI programs with Python and Dip.</p>
+
+  </div>
+</section>
+
+<section class="white thanks">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <header>
+      <h2>The Final Chapter</h2>
+      <div class="highlight highlight"></div>
+    </header>
+      <p>And that's it! You've now completed your Dip training! This has paved the way for you to create some truly fun applications with Dip!</p>
   </div>
 </section>
 
 
-
-
-<section id="read-the-docs" class="white thanks">
+<section id="read-the-docs" class="green">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
       <h2>Learn more!</h2>
@@ -296,8 +553,9 @@ end
 
 
 
-    </main>
-    <footer class = "green">
+</main>
+
+<footer class = "green">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <div class="flex flex-column flex-row-ns pv0-l">
       <div class="flex flex-column mw8 w-100 measure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l" id="get-help">

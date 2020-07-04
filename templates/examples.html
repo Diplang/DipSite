@@ -27,6 +27,8 @@
     <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="/try">Try Dip</a></li>
     <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="/about">About</a></li>
     <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="/docs">Documentation</a></li>
+    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="/tutorial">Tutorial</a></li>
+    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="/examples">Examples</a></li>
     <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="/forum">Forum</a></li>
     <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="/install">Install</a></li>
   </ul>
@@ -166,6 +168,51 @@ evaluate(python_code)
   end
 </code>
 </pre>
+
+<h1 id="factorial-function">GUI programs in Dip (With Python)</h1>
+<pre><code>variable name = input("What's your name? ")
+
+variable python_code = "import tkinter as tk;" + "root = tk.Tk();" + "root.title = 'Dip GUI';" + "label = tk.Label(root, text='Hello, " + name + "').pack()"
+
+evaluate(python_code)
+</code></pre><p>
+</code></p>
+
+<h1 id="factorial-function">Caesar Cipher in Dip</h1>
+<pre><code># Implementing the Caesar cipher in Dip
+
+# Including all of the letters in the English alphabet
+
+variable alphabet = "abcdefghijklmnopqrstuvwxyz "
+
+# Getting the user's input
+
+variable plaintext = input("Which word / phrase would you like to encrypt: ")
+
+# The key, which adds the value of the key to
+
+variable key = input_integer("What would you like the key to be? ")
+
+variable ciphertext = ""
+
+for character = 0 to length(plaintext) then
+
+    for letter = 0 to length(alphabet) then
+        if plaintext / character == alphabet / letter then
+            if plaintext / character != " " then
+                variable index = letter + key
+                variable ciphertext = ciphertext + alphabet / (index % 26)
+            else
+                variable ciphertext = ciphertext + " "
+            end
+        end
+    end
+end
+
+print("ciphertext: " + ciphertext)
+</code></pre><p>
+</code></p>
+
 
 
 
