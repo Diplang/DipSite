@@ -32,10 +32,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href="static/dip logo.png">
 
 
-
-
-    <!-- Custom Highlight pack with: Rust, Markdown, TOML, Bash, JSON, YAML,
-         and plaintext. -->
     <script src="/static/scripts/highlight.pack.js" defer></script>
     <script src="/static/scripts/init.js" defer></script>
   </head>
@@ -53,7 +49,7 @@
     <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="/try">Try Dip</a></li>
     <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="/about">About</a></li>
     <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="/docs">Documentation</a></li>
-    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="/tutorial">Tutorial</a></li>
+    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="/tutorial">Learning Path</a></li>
     <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="/examples">Examples</a></li>
     <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="/forum">Forum</a></li>
     <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="/install">Install</a></li>
@@ -66,7 +62,7 @@
     <main>
 
 
-<section id="installing-rust" class="green">
+<section class="green">
   <div style = "scroll-behavior: smooth;" class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
       <h2>Dip's Tutorial</h2>
@@ -74,20 +70,23 @@
     </header>
     <h2 class="subtitle">The step by step learning path to start coding with Dip.</h2></br>
     <p>Dip is aimed at beginners starting to learn to code. It is by no means complete, and does not aim to compete with the mainstream languages of today. However, it does prove a good place to start learning to code.</p>
-    <p>I recommend starting out as a beginner, and learning more about Dip and its syntax. After this, move on to the next section, and when done with that, start working on complex programs with Dip.</p>
+    <p>I recommend starting with section 1 and doing the exercises. After you're done with those, you should move on to section 2, and start doing the exercises there. Next, move on to section 3 and complete your transition from a Dip learner to a Dip user. </p>
+
+    <p>Don't worry if you're confused. You can always look at the <a href = "/docs">documentation</a>, ask a question on the <a href = "/forum">forum</a>, and if the problem persists, mail <a href = "mailto:raghavnautiyal26@gmail.com">me</a> personally.</p>
+
     <div id="top" class="mw-50-l mr4-l pt0 flex flex-column justify-between-l">
-        <h3>I am a beginner</h3>
-        <a style = "scroll-behavior: smooth;" href="#beginner" class="button button-secondary">Dip's Exercises for Beginners</a>
+        <h3>Section 1: Learning to code with Dip</h3>
+        <a style = "scroll-behavior: smooth;" href="#beginner" class="button button-secondary">See Section 1 - Learning to code with Dip</a>
     </div>
     </br>
     <div id="top" class="mw-50-l mr4-l pt0 flex flex-column justify-between-l">
-        <h3>I know a bit about code</h3>
-        <a style = "scroll-behavior: smooth;" href="#intermediate" class="button button-secondary">Dip's Exercises for Intermediates</a>
+        <h3>Section 2: Writing Complex Programs With Dip</h3>
+        <a style = "scroll-behavior: smooth;" href="#intermediate" class="button button-secondary">See Section 2 - Writing Complex Programs With Dip</a>
     </div>
     </br>
     <div id="top" class="mw-50-l mr4-l pt0 flex flex-column justify-between-l">
-        <h3>I can code well</h3>
-        <a style = "scroll-behavior: smooth;" href="#advanced" class="button button-secondary">Dip's Exercises for Veterans</a>
+        <h3>Section 3: Dip programming for veterans</h3>
+        <a style = "scroll-behavior: smooth;" href="#advanced" class="button button-secondary">See Section 3 - Dip programming for veterans</a>
     </div>
   </div>
 </section>
@@ -95,20 +94,20 @@
 <section id="beginner" class="white thanks">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>Learning to code with Dip</h2>
+      <h2>Section 1: Learning to code with Dip</h2>
       <div class="highlight highlight"></div>
     </header>
     <p>Getting started with programming can be a daunting task. That's why I want to make it simple for you. Start out doing the following experiments with Dip, and familiarise yourself with the language</p>
     <div id="top" class="mw-50-l mr4-l pt0 flex flex-column justify-between-l">
-        <h3>Get started by using Dip's environment as a calculator, and familiarise yourself with its syntax</h3>
+        <h3>1A. Calculating With Dip's Environment</h3>
         <a href="#calculator" class="button button-secondary">Let's go!</a>
     </div></br>
     <div id="top" class="mw-50-l mr4-l pt0 flex flex-column justify-between-l">
-        <h3>Build a program to ask the user for their name and present them with a greeting</h3>
+        <h3>1B. Writing your first Dip program: Greeting the user</h3>
         <a href="#greeter" class="button button-secondary">Let's go!</a>
     </div></br>
     <div id="top" class="mw-50-l mr4-l pt0 flex flex-column justify-between-l">
-        <h3>Put your skills to the test and create a dip program that adds any two numbers</h3>
+        <h3>1C. Looking Further - Creating a simple calculator in Dip</h3>
         <a href="#adder" class="button button-secondary">Let's go!</a>
     </div>
   </div>
@@ -117,7 +116,7 @@
 <section id="calculator" class="green">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>Calculating With Dip's Environment</h2>
+      <h2>1A. Calculating With Dip's Environment</h2>
       <div class="highlight highlight"></div>
     </header>
     <p>Learn to use Dip's environment like a calculator. Start by trying to add two numbers, like so:</p>
@@ -138,7 +137,7 @@
 <section id="greeter" class="white thanks">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>Writing your first Dip program: Greeting the user</h2>
+      <h2>1B. Writing your first Dip program: Greeting the user</h2>
       <div class="highlight highlight"></div>
     </header>
     <p>Now you've learnt to use Dip's environment like a calculator, let's write our first program in Dip!</p>
@@ -146,16 +145,18 @@
     <code>Dip> function greet(name) -> print("Hi, " + name)</code></br></br>
     <p>You should see this as the output:</p>
     <code>function greet</code></br></br>
-    <code>Dip> greet("Raghav")</code></br></br>
+    <p>The above line is Dip's way of letting you know that you've created a function called <code>greet</code></p>
+    <p>Now, type <code>Dip> greet("Raghav")</code> into the Dip interface, to see the result of your work.</p>
+    <p>The output you should see is:</p>
     <code>Hi, Raghav</code></br></br>
-    <p>How does it feel after creating your first program in Dip! If you wish to, you can customise this program, asking the age and location of the user</p>
+    <p>How does it feel after creating your first program in Dip! Now, you can move on to section 1C, and learn to create a simple program to add two numbers!</p>
   </div>
 </section>
 
 <section id="adder" class="green">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>Looking Further - Creating a simple calculator in Dip</h2>
+      <h2>1C. Looking Further - Creating a simple calculator in Dip</h2>
       <div class="highlight highlight"></div>
     </header>
     <p>So you've learnt how to use the Dip editor as a calculator, and have written your first program. What better than to join these together, and create a program that adds two numbers?</p>
@@ -177,20 +178,20 @@
 <section id="intermediate" class="white thanks">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>Writing Complex Programs With Dip</h2>
+      <h2>Section 2: Writing Complex Programs With Dip</h2>
       <div class="highlight highlight"></div>
     </header>
     <p>Learn to run external files with Dip, recreate an old method of encryption, and pick up from were you left off in the previous section!</p>
     <div id="top" class="mw-50-l mr4-l pt0 flex flex-column justify-between-l">
-        <h3>Learn to evaluate external files and start writing programs in .dip files. Then, make a program to test the properties of triangles!</h3>
+        <h3>2A. Evaluating external files with Dip</h3>
         <a href="#files" class="button button-secondary">Let's go!</a>
     </div></br>
     <div id="top" class="mw-50-l mr4-l pt0 flex flex-column justify-between-l">
-        <h3>Learn to build a message encrypter - using the Caesar cipher, to encrypt messages!</h3>
+        <h3>2B. The Encryption Game: Implementing Caesar's cipher</h3>
         <a href="#caesar" class="button button-secondary">Let's go!</a>
     </div></br>
     <div id="top" class="mw-50-l mr4-l pt0 flex flex-column justify-between-l">
-        <h3>Finally, build a calclator program that can add, subtract, multiply or divide any numbers!</h3>
+        <h3>2C. The final stage - Creating a full blown calculator in Dip</h3>
         <a href="#calc2" class="button button-secondary">Let's go!</a>
     </div>
   </div>
@@ -199,7 +200,7 @@
 <section id="files" class="green">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>Expanding Horizons</h2>
+      <h2>2A. Evaluating external files with Dip</h2>
       <div class="highlight highlight"></div>
     </header>
     <p>Now that you've learnt to use Dip's basic features, let's move on to writing some complex programs with Dip.</p>
@@ -252,7 +253,7 @@ end</code></pre>
 <section id="caesar" class="white thanks">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>The Encryption Game: Implementing the Caesar cipher in Dip</h2>
+      <h2>2B. The Encryption Game: Implementing Caesar's cipher</h2>
       <div class="highlight highlight"></div>
     </header>
     <p>Great! You've got so far! Now, it's time to make something interesting, and put your skills to the test, and try to replicate the Caesar cipher in Dip</p>
@@ -335,7 +336,9 @@ end
 </code></pre><p>
 
 
-  <p>This block of code first loops over each letter in the plaintext. Then it also starts looping over each letter in the alphabet, and checks letter by letter, whether the plaintext is part of the English alphabet. If it is, then it substitutes it with the corresponding letter x places ahead of it (here, x is they key provided). Then, it checks if the current character is a space, and adds it to the ciphertext. Bu\y the end, the program has added all of the letters to the ciphertext, and the encryption is done!</p>
+  <p>This block of code first loops over each letter in the plaintext. Then it also starts looping over each letter in the alphabet, and checks letter by letter, whether the plaintext is part of the English alphabet. If it is, then it substitutes it with the corresponding letter x places ahead of it (here, x is they key provided). Then, it checks if the current character is a space, and adds it to the ciphertext. By the end, the program has added all of the letters to the ciphertext, and the encryption is done!</p>
+
+  <p>Please note that indentation of the code is not necessary. I have done this simply to make the program easier to read for you.</p>
 
   <p>To see our encrypted output, we can then print the ciphertext<code>print("ciphertext: " + ciphertext)</code></p>
 
@@ -363,7 +366,7 @@ end
 <section id="calc2" class="green">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>The final stage - Creating a full blown calculator in Dip</h2>
+      <h2>2C. The final stage - Creating a full blown calculator in Dip</h2>
       <div class="highlight highlight"></div>
     </header>
     <p>Let's pick up from where we left off in the beginner exercises, by creating a program to add two numbers. Now, let's make a full-blown calculator, that prompts the user for their input, asking for two numbers and then adds, subtracts, multiplies or divides the two.</p>
@@ -421,20 +424,20 @@ end
 <section id="advanced" class="white thanks">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>Dip programming for veterans</h2>
+      <h2>Section 3: Dip programming for veterans</h2>
       <div class="highlight highlight"></div>
     </header>
     <p>Don't worry if you're a programming veteran. Test how Dip and Python can work together!</p>
     <div id="top" class="mw-50-l mr4-l pt0 flex flex-column justify-between-l">
-        <h3>The factorial program never gets old. Try to implement the factorial functionin Dip</h3>
+        <h3>3A. The Factorial Function</h3>
         <a href="#factorial" class="button button-secondary">Let's go!</a>
     </div></br>
     <div id="top" class="mw-50-l mr4-l pt0 flex flex-column justify-between-l">
-        <h3>Try the famous fibonacci program in Dip, using recursion</h3>
+        <h3>3B. The Fibonacci Function</h3>
         <a href="#fibonacci" class="button button-secondary">Let's go!</a>
     </div></br>
     <div id="top" class="mw-50-l mr4-l pt0 flex flex-column justify-between-l">
-        <h3>Put your Dip and Python skills to the test and create a Dip-Python program that does something</h3>
+        <h3>3C. Python and Dip: The Dream Team</h3>
         <a href="#python" class="button button-secondary">Let's go!</a>
     </div>
   </div>
@@ -443,7 +446,7 @@ end
 <section id="factorial" class="green">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>The Factorial Function</h2>
+      <h2>3A. The Factorial Function</h2>
       <div class="highlight highlight"></div>
     </header>
     <p>Open a new file, and write the following code to implement the factorial function! (You should probably try it out yourself before looking at this):</p>
@@ -465,7 +468,7 @@ print(fact)
 <section id="fibonacci" class="white thanks">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>Do it in Dip: The Fibonacci Function</h2>
+      <h2>3B. The Fibonacci Function</h2>
       <div class="highlight highlight"></div>
     </header>
     <pre><code><span class="hljs-keyword">function</span> fib(nterms)</br><span class="hljs-keyword">variable</span> n1 <span class="hljs-comment">= 0</span>
@@ -496,7 +499,7 @@ end
 <section id="python" class="green">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>Python and Dip: The Dream Team</h2>
+      <h2>3C. Python and Dip: The Dream Team</h2>
       <div class="highlight highlight"></div>
     </header>
     <p>To start, Python and Dip are clearly not the dream team, that was more of a joke. Dip was written in Python, and that's why it can interact with it, and maybe be useful in some small cases.</p>
@@ -514,7 +517,8 @@ end
 
     <code>variable python_code = "import tkinter as tk;" + "root = tk.Tk();" + "label = tk.Label(root, text='Hello, " + name + "').pack()"</code></br></br>
 
-    <p>What this code does, is creates a GUI Window in Python using the Tkinter library. Then, it creates a new label where text will be printed, and substitutes the text to be printed with the 'name' variable we had defined earlier. This way, whatever the user inputs can be used to display their name in the GUI window.</p>
+    <p>The first line of the code, <code>import tkinter as tk</code> is used to import the tkinter library in Python, which is a GUI library used to create graphical programs. The second line, <code>root = tk.Tk()</code> creates an empty GUI window in Python. This is created through the Tkinter library, which is an external GUI library for Python. Read more about <a href = "https://teamtreehouse.com/community/what-exactly-is-a-library-in-programming">libraries</a> and <a href = "https://wiki.python.org/moin/TkInter">tkinter</a> using the hyperlinks. The third line, and perhaps the most important line of this program creates a new text box in the GUI window, which Tkinter calls a label. The label function takes 2 arguments, where to put the text box, and what text to put in it. For the first argument, we write <code>root</code>, because that is the name of our GUI window. For the second argument, we plug-in our variable name, so that we can make the user's name go in place of the text box's text.</p>
+
 
     <p>To show our results, we can then write <code>evaluate(python_code)</code> to evaluate our Python code</p>
 
@@ -563,6 +567,7 @@ end
         <ul>
           <li><a href="/docs">Documentation</a></li>
           <li><a href="/forum">Ask a Question on the forum</a></li>
+          <li><a href="mailto:raghavnautiyal26@gmail.com">Ask me your question</a></li>
         </ul>
 
       </div>
