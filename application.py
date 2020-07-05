@@ -291,7 +291,7 @@ def individual(iden):
         conn = psycopg2.connect(DATABASE_URI)
         cur = conn.cursor()
 
-        query = """INSERT INTO comments (post_id, author, content, timestamp) VALUES (%s, %s, %s, %s)"""
+        #query = """INSERT INTO comments (post_id, author, content, timestamp) VALUES (%s, %s, %s, %s)"""
         info = (iden[0]["id"], session.get("username"), content, datetime.now())
 
         # add user into database
