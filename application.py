@@ -20,7 +20,6 @@ usrname = ""
 # Ensure templates are auto-reloaded
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 DATABASE_URI = os.environ['DATABASE_URL']
-print(DATABASE_URI)
 
 # Configure session to use filesystem (instead of signed cookies)
 app.config["SESSION_FILE_DIR"] = mkdtemp()
@@ -29,7 +28,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Use SQLite database
-db =  cs50.SQL(DATABASE_URI)
+db = cs50.SQL(DATABASE_URI)
 
 @app.route("/")
 def index():
@@ -115,34 +114,6 @@ def logout():
     # Redirect user to login form
     return redirect("/")
 
-@app.route("/upload", methods=['GET', 'POST'])
-@login_required
-def upload():
-    """Upload a new project"""
-    if request.method == "POST":
-        print("HELLOOOOO")
-        url = request.form.get("url")
-        name = request.form.get("title")
-        status = request.form.get("snips")
-        description = request.form.get("description")
-        github = request.form.get("code")
-
-        username = session.get("username")
-
-        rows = db.execute("SELECT * FROM users WHERE username = :username",
-                          username=name)
-        # Ensure project doesn't exist
-        if len(rows) == 1:
-            return apology("Project already exists", 403)
-
-        project = db.execute("INSERT INTO projects (url, name, description, github, screenshot) VALUES (:url, :name, :description, :github,:screenshot)", url=request.form.get("url"), name=request.form.get("title"),description=request.form.get("description"), github = request.form.get("code"), screenshot = request.form.get("snips"))
-
-        return redirect(f"/projects/{name}/")
-    else:
-        return render_template("upload.html")
-
-
-
 
 @app.route("/forum", methods=['GET', 'POST'])
 def forum():
@@ -161,11 +132,10 @@ def forum():
     return render_template("forum.html",posts=posts)
 
 
-@app.route("/newest", methods=['GET', 'POST'])
+@app.route("/newest")
 def newest():
 
     posts = []
-
 
     rows = db.execute("SELECT * FROM posts ORDER BY timestamp DESC")
 
@@ -178,7 +148,7 @@ def newest():
 
     return render_template("newest.html",posts=posts)
 
-@app.route("/comments", methods=['GET', 'POST'])
+@app.route("/comments")
 def comments():
 
     posts = []
@@ -218,13 +188,11 @@ def submit():
 
         text = request.form.get("text")
 
-        print(datetime.now())
-
         if session.get("username") == None:
             return redirect("/login")
 
-        conn = psycopg2.connect(DATABASE_URI)
-        cur = conn.cursor()
+        #conn = psycopg2.connect(DATABASE_URI)
+        #cur = conn.cursor()
 
         #query = """INSERT INTO posts (author, title, description, timestamp) VALUES (:author, :title, :text, :datetime)"""
 
@@ -280,7 +248,7 @@ def individual(iden):
 
         content = request.form.get("description")
 
-        cur = conn.cursor()
+        #cur = conn.cursor()
 
         #query = """INSERT INTO posts (post_id, author, content, timestamp) VALUES (:postid, :author, :content, :datetime)"""
 
@@ -322,11 +290,7 @@ def trydip():
 
         print(raw_text)
 
-        if str(request.form.get("input")) == "":
-            inputt = 'print("Hello, Dip!")'
-        else:
-            inputt = str(request.form.get("input"))
-
+        inputt = str(request.form.get("input"))
 
         if error:
             return render_template("try.html", inputt=inputt, error=(error.as_string()))
