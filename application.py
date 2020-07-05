@@ -295,7 +295,7 @@ def trydip():
             return render_template("try.html", error=(error.as_string()))
 
         elif result:
-            return render_template("try.html", output=list(result.elements))
+            return render_template("try.html", inputt=inputt, output=list(result.elements))
     else:
         return render_template("try.html", inputt=inputt)
 

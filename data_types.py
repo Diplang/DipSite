@@ -22,11 +22,6 @@ tp = ""
 global i
 
 
-def my_exec(code):
-    exec(f'global i; i = {code}')
-    global i
-    return i
-
 def reset():
     global toprint
     global veryimp
