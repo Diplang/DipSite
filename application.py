@@ -232,7 +232,7 @@ def submit():
         conn = psycopg2.connect(DATABASE_URI)
         cur = conn.cursor()
 
-        query = """INSERT INTO posts (author, title, description, timestamp) VALUES (%s, %s, %s, %s)"""
+        #query = """INSERT INTO posts (author, title, description, timestamp) VALUES (%s, %s, %s, %s)"""
         info = (author, title, text, datetime.now())
 
         # add user into database
