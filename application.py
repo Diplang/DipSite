@@ -53,8 +53,8 @@ def register():
 
         pword = request.form.get("password")
 
-        conn = psycopg2.connect(DATABASE_URI)
-        cur = conn.cursor()
+        #conn = psycopg2.connect(DATABASE_URI)
+        #cur = conn.cursor()
 
         #query = """INSERT INTO users (username, hash) VALUES (:username, :password)"""
         # add user into database
