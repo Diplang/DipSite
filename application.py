@@ -280,30 +280,24 @@ def trydip():
     if request.method == "POST":
 
         print("\nDip Version 0.1 - Beta\n")
-        print('\nType "help", "copyright", "credits" or "about" for more information.\n')
         raw_text = str(request.form.get("input"))
 
         formatted_text = raw_text.replace("\r", "")
 
         result, error = run('<input>', formatted_text)
 
-        print(raw_text)
-
-        inputt = str(request.form.get("input"))
-
         if error:
             return render_template("try.html", error=(error.as_string()))
 
         elif result:
-            return render_template("try.html", inputt=inputt, output=list(result.elements))
+            return render_template("try.html", inputt=raw_text, output=list(result.elements))
     else:
-        return render_template("try.html", inputt=inputt)
+        return render_template("try.html", inputt=raw_text)
 
 @app.route("/about")
 def about():
     """Show About page"""
     return render_template("about.html")
-
 
 @app.route("/install")
 def install():

@@ -54,11 +54,11 @@ the language and playing around with it. Also, if all you want is the source cod
   <main>
     <h3>Type your Dip program here (Please be careful of incorrect capitalisation):</h3>
     <h4>Note: The online version of Dip is missing a few features. <a href = "/install">Download Dip</a> to get the full experience!</h4>
-<div id="interpreter">
+<div>
     <form action = "/try" method="POST" required>
-        <textarea id="program-source" name = "input" placeholder = 'print("Hello, Dip!")'>{{ inputt }}</textarea>
+        <textarea name = "input" placeholder = 'print("Hello, Dip!")'>{{ inputt }}</textarea>
         <input type="submit" text = "Run!"></input>
-        <textarea id="program-output">{% for i in output %} {{ i }}  {% endfor %} {{error}}</textarea>
+        <textarea>{% for i in output %} {{ i }}  {% endfor %} {{error}}</textarea>
 
         </div>
 
