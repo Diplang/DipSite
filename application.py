@@ -194,11 +194,7 @@ def comments():
 
         op = db.execute("SELECT title FROM posts WHERE id = :identification", identification=row["post_id"])
 
-        print(row["content"])
-        print(row["author"])
-        print(row["post_id"])
-        print(row["timestamp"])
-        print(op[0]["title"])
+        print(op)
 
         posts.append(list((row["content"], row["author"], row["post_id"], row["timestamp"], op[0]["title"])))
 
