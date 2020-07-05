@@ -290,8 +290,10 @@ def individual(iden):
 
         query = """INSERT INTO posts (post_id, author, content, timestamp) VALUES (:postid, :author, :content, :datetime)"""
 
+        info = """postid=iden[0]["id"], author=session.get("username"), content=content, datetime=datetime.now()"""
+
         # add user into database
-        post = cur.execute(query, postid=iden[0]["id"], autho=session.get("username"), content=content, datetime=datetime.now())
+        post = cur.execute(query,info)
 
         # add user into database
         user = cur.execute(query, info)
