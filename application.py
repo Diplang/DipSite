@@ -59,7 +59,7 @@ def register():
 
         query = """INSERT INTO users (username, hash) VALUES (:username, :password)"""
         # add user into database
-        user = cur.execute(query, username = usrname, password = generate_password_hash(pword))
+        #user = cur.execute(query, username = usrname, password = generate_password_hash(pword))
 
         conn.commit()
 
@@ -233,7 +233,7 @@ def submit():
         query = """INSERT INTO posts (author, title, description, timestamp) VALUES (:author, :title, :text, :datetime)"""
 
         # add user into database
-        post = cur.execute(query, author = author, title = title, text = text, datetime=datetime.now())
+        #post = cur.execute(query, author = author, title = title, text = text, datetime=datetime.now())
 
         conn.commit()
 
@@ -293,10 +293,10 @@ def individual(iden):
         info = """postid=iden[0]["id"], author=session.get("username"), content=content, datetime=datetime.now()"""
 
         # add user into database
-        post = cur.execute(query,info)
+        #post = cur.execute(query,info)
 
         # add user into database
-        user = cur.execute(query, info)
+        user = #cur.execute(query, info)
 
         conn.commit()
 
