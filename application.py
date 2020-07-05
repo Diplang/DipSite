@@ -276,7 +276,7 @@ def start():
 
 @app.route("/try", methods=['GET', 'POST'])
 def trydip():
-    inputt = ""
+    inputt = 'print("Hello, Dip")'
     if request.method == "POST":
 
         print("\nDip Version 0.1 - Beta\n")
@@ -286,13 +286,15 @@ def trydip():
 
         result, error = run('<input>', formatted_text)
 
+        inputt = str(request.form.get("input"))
+
         if error:
             return render_template("try.html", error=(error.as_string()))
 
         elif result:
-            return render_template("try.html", inputt=raw_text, output=list(result.elements))
+            return render_template("try.html", inputt=inputt, output=list(result.elements))
     else:
-        return render_template("try.html", inputt=raw_text)
+        return render_template("try.html", inputt=inputt)
 
 @app.route("/about")
 def about():
