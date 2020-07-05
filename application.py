@@ -287,7 +287,7 @@ def trydip():
         inputt = str(request.form.get("input"))
 
         if error:
-            return render_template("try.html", error=(error.as_string()))
+            return render_template("try.html",inputt=inputt, error=(error.as_string()))
 
         elif result:
             return render_template("try.html", inputt=inputt, output=list(result.elements))
