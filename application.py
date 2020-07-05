@@ -287,16 +287,15 @@ def trydip():
 
         result, error = run('<input>', formatted_text)
 
-
         print(raw_text)
 
         inputt = str(request.form.get("input"))
 
         if error:
-            return render_template("try.html", inputt=inputt, error=(error.as_string()))
+            return render_template("try.html", error=(error.as_string()))
 
         elif result:
-            return render_template("try.html", inputt=inputt, output=list(result.elements))
+            return render_template("try.html", output=list(result.elements))
     else:
         return render_template("try.html", inputt=inputt)
 
