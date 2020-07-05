@@ -58,7 +58,7 @@ the language and playing around with it. Also, if all you want is the source cod
     <form action = "/try" method="POST" required>
         <textarea id="program-source" name = "input" placeholder = 'print("Hello, Dip!")'>{{ inputt }}</textarea>
         <input type="submit" text = "Run!"></input>
-        <textarea id="program-output">{% for i in output %} {{ i }}  {% endfor %} {{error}}</textarea>
+        <textarea id="program-output"readonly>{% for i in output %} {{ i }}  {% endfor %} {{error}}</textarea>
 
         </div>
 
