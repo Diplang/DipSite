@@ -692,36 +692,7 @@ class BuiltInFunction(BaseFunction):
         return RTResult().success(String(text.path()))
     execute_getpath.arg_names = []
 
-    def execute_read(self, exec_ctx):
-        fn = str(exec_ctx.symbol_table.get("fn"))
-        try:
-            with open(fn, "r") as f:
-                script = f.read()
-                return RTResult().success(String(script))
-        except Exception as e:
-            return RTResult().failure(RTError(
-                self.pos_start, self.pos_end,
-                f"Failed to load file \"{fn}\"\n" + str(e),
-                exec_ctx
-            ))
 
-    execute_read.arg_names = ["fn"]
-
-    def execute_write(self, exec_ctx):
-        fn = str(exec_ctx.symbol_table.get("fn"))
-        content = str(exec_ctx.symbol_table.get("content"))
-        try:
-            with open(fn, "a") as f:
-                script = f.write(content)
-                return RTResult().success(String(script))
-        except Exception as e:
-            return RTResult().failure(RTError(
-                self.pos_start, self.pos_end,
-                f"Failed to load file \"{fn}\"\n" + str(e),
-                exec_ctx
-            ))
-
-    execute_write.arg_names = ["fn", "content"]
 
 
 
