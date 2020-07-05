@@ -56,9 +56,10 @@ def register():
         conn = psycopg2.connect(DATABASE_URI)
         cur = conn.cursor()
 
-        query = """INSERT INTO users (username, hash) VALUES (:username, :password)"""
+        query = """INSERT INTO users (username, hash) VALUES (%s,%s)"""
+        info = (usrname, generate_password_hash(pword))
         # add user into database
-        user = cur.execute(query, username = usrname, password = generate_password_hash(pword))
+        user = cur.execute(query, info)
 
         conn.commit()
 
@@ -194,15 +195,17 @@ def submit():
         conn = psycopg2.connect(DATABASE_URI)
         cur = conn.cursor()
 
-        query = """INSERT INTO posts (author, title, description, timestamp) VALUES (:author, :title, :text, :datetime)"""
+        query = """INSERT INTO posts (author, title, description, timestamp) VALUES (%s, %s, %s, %s)"""
+
+        info = (author, title, text, datetime.now())
 
         # add user into database
-        post = cur.execute(query, author = author, title = title, text = text, datetime=datetime.now())
+        post = cur.execute(query, info)
 
         conn.commit()
 
         # add post into database
-        post = db.execute("INSERT INTO posts (author, title, description, timestamp) VALUES (:author, :title, :text, :timestamp)", author=author, title=title, text=formatted_text, timestamp=datetime.now())
+        post = db.execute("INSERT INTO posts (author, title, description, timestamp) VALUES (:author, :title, :text, :timestamp)", author=author, title=title, text=text, timestamp=datetime.now())
 
         return redirect("/forum")
     # User reached route via GET (as by clicking a link or via redirect)
@@ -248,11 +251,13 @@ def individual(iden):
 
         content = request.form.get("description")
 
+        conn = psycopg2.connect(DATABASE_URI)
+
         cur = conn.cursor()
 
-        query = """INSERT INTO posts (post_id, author, content, timestamp) VALUES (:postid, :author, :content, :datetime)"""
+        query = """INSERT INTO comments (post_id, author, content, timestamp) VALUES (%s, %s, %s, %s)"""
 
-        info = """postid=iden[0]["id"], author=session.get("username"), content=content, datetime=datetime.now()"""
+        info = (iden[0]["id"], session.get("username"), content, datetime.now())
 
         # add user into database
         post = cur.execute(query,info)
