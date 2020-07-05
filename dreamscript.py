@@ -90,8 +90,6 @@ global_symbol_table.set("wait", BuiltInFunction.wait)
 global_symbol_table.set("error", BuiltInFunction.error)
 
 
-
-
 def run(fn, text):
         # Generate tokens
         lexer = Lexer(fn, text)

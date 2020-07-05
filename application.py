@@ -53,14 +53,14 @@ def register():
 
         pword = request.form.get("password")
 
-        #conn = psycopg2.connect(DATABASE_URI)
-        #cur = conn.cursor()
+        conn = psycopg2.connect(DATABASE_URI)
+        cur = conn.cursor()
 
-        #query = """INSERT INTO users (username, hash) VALUES (:username, :password)"""
+        query = """INSERT INTO users (username, hash) VALUES (:username, :password)"""
         # add user into database
-        #user = cur.execute(query, username = usrname, password = generate_password_hash(pword))
+        user = cur.execute(query, username = usrname, password = generate_password_hash(pword))
 
-        #conn.commit()
+        conn.commit()
 
         return redirect("/login")
     # User reached route via GET (as by clicking a link or via redirect)
@@ -191,18 +191,18 @@ def submit():
         if session.get("username") == None:
             return redirect("/login")
 
-        #conn = psycopg2.connect(DATABASE_URI)
-        #cur = conn.cursor()
+        conn = psycopg2.connect(DATABASE_URI)
+        cur = conn.cursor()
 
-        #query = """INSERT INTO posts (author, title, description, timestamp) VALUES (:author, :title, :text, :datetime)"""
+        query = """INSERT INTO posts (author, title, description, timestamp) VALUES (:author, :title, :text, :datetime)"""
 
         # add user into database
-        #post = cur.execute(query, author = author, title = title, text = text, datetime=datetime.now())
+        post = cur.execute(query, author = author, title = title, text = text, datetime=datetime.now())
 
-        #conn.commit()
+        conn.commit()
 
         # add post into database
-        #post = db.execute("INSERT INTO posts (author, title, description, timestamp) VALUES (:author, :title, :text, :timestamp)", author=author, title=title, text=formatted_text, timestamp=datetime.now())
+        post = db.execute("INSERT INTO posts (author, title, description, timestamp) VALUES (:author, :title, :text, :timestamp)", author=author, title=title, text=formatted_text, timestamp=datetime.now())
 
         return redirect("/forum")
     # User reached route via GET (as by clicking a link or via redirect)
@@ -248,19 +248,19 @@ def individual(iden):
 
         content = request.form.get("description")
 
-        #cur = conn.cursor()
+        cur = conn.cursor()
 
-        #query = """INSERT INTO posts (post_id, author, content, timestamp) VALUES (:postid, :author, :content, :datetime)"""
+        query = """INSERT INTO posts (post_id, author, content, timestamp) VALUES (:postid, :author, :content, :datetime)"""
 
-        #info = """postid=iden[0]["id"], author=session.get("username"), content=content, datetime=datetime.now()"""
-
-        # add user into database
-        #post = cur.execute(query,info)
+        info = """postid=iden[0]["id"], author=session.get("username"), content=content, datetime=datetime.now()"""
 
         # add user into database
-        #user = #cur.execute(query, info)
+        post = cur.execute(query,info)
 
-        #conn.commit()
+        # add user into database
+        user = cur.execute(query, info)
+
+        conn.commit()
 
         return redirect("/posts/" + str(iden[0]["id"]))
 
