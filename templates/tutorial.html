@@ -307,24 +307,24 @@ Unencrypted text is generally called plaintext. Encrypted text is generally call
     <p>Now that you know a bit about the cipher, create a new file in your favourite text editor, and name it caesar.dip</p>
     <p>Now, let's start by creating a list of all the alpabets, so we can tell Dip what we consider valid plaintext. Note that this is a very basic version Caesar's cipher, meant to introduce you to Dip's concepts.</p>
 
-    <p>Please note that you should probably comment your code using the '#' sybmol. I am not doing it, because my code is accompanied with text explaining it</p>
+    <p>Please note that you should probably comment your code using the '#' sybmol. I am not doing it, because my code is accompanied by text explaining it.</p>
 
-    <code>variable alphabet = "abcdefghijklmnopqrstuvwxyz "</code></br></br>
+    <code>variable alphabet = "abcdefghijklmnopqrstuvwxyz "</code>.</br></br>
 
-    <p>This line of code is basically telling us that the alphabet consists of these letters</p>
+    <p>This line of code is basically telling us that the alphabet consists of these letters.</p>
 
-    <p>Next, let's get the user's input, so we can get the plaintext he wants us to encrypt</p>
+    <p>Next, let's get the user's input, so we can get the plaintext they want us to encrypt.</p>
 
-    <code>variable plaintext = input("Which word / phrase would you like to encrypt: ")</code></br></br>
+    <code>variable plaintext = input("Which word / phrase would you like to encrypt: ")</code>.</br></br>
 
 
-    <p>Now, let's ask for the key, <code>variable key = input_integer("What would you like the key to be? ")</code></p>
+    <p>Now, let's ask for the key, <code>variable key = input_integer("What would you like the key to be? ")</code><./p>
 
     <p>Note that I have used <code>input_integer</code> here in order to ensure the user behaves themselves and only gives us integers as they key.</p>
 
-    <p>Now, we can create an empty string called ciphertext, by doing<code>variable ciphertext = ""</code></p>
+    <p>Now, we can create an empty string called ciphertext, by doing<code>variable ciphertext = ""</code>.</p>
 
-    <p>After this, we can now start to loop over each letter in the plaitext and substitute it will the letter that results, when offset by the key</p>
+    <p>After this, we can now start to loop over each letter in the planitext and substitute it will the letter that results, when offset by the key.</p>
 
     <pre><code>for character = 0 to length(plaintext) then
     for letter = 0 to length(alphabet) then
@@ -360,9 +360,9 @@ end
 
    <pre><code>
     Dip>  run("examples/caesar.dip")
-    Which word / phrase would you like to encrypt: hello
-    What would you like the key to be? 1
-    ciphertext: ifmmp
+    Which word / phrase would you like to encrypt: this is the caesar cipher in dip
+    What would you like the key to be? 3
+    ciphertext: wklv lv wkh fdhvdu flskhu lq gls
   </code></pre>
 
   </div>
