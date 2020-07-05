@@ -292,7 +292,7 @@ def trydip():
         elif result:
             return render_template("try.html", inputt=inputt, output=list(result.elements))
     else:
-        return render_template("try.html", inputt=inputt)
+        return render_template("sorry.html", inputt=inputt)
 
 @app.route("/about")
 def about():
