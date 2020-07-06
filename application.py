@@ -318,3 +318,15 @@ def examples():
 def tutorial():
     """Show Tutorial page"""
     return render_template("tutorial.html")
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template("404.html")
+
+@app.errorhandler(403)
+def forbidden(e):
+    return render_template("403.html")
+
+@app.errorhandler(500)
+def internal_server_error(e):
+    return render_template("500.html")
